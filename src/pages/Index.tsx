@@ -5,6 +5,7 @@ import { SERVICES, TESTIMONIALS, STATS, VALUES, CONTACT } from "@/data/hospital"
 import exteriorImg from "@/assets/hospital/exterior.jpg";
 import receptionImg from "@/assets/hospital/reception.jpg";
 import drCheckupImg from "@/assets/hospital/dr-checkup.png";
+import drKuteImg from "@/assets/hospital/dr-kute.jpg";
 import careImg from "@/assets/hospital/care.jpg";
 
 const Index = () => {
@@ -18,9 +19,9 @@ const Index = () => {
             <div className="eyebrow animate-fade-up">
               <span className="w-1.5 h-1.5 rounded-full bg-accent" /> Sangamner · Multi-specialty
             </div>
-            <h1 className="mt-5 text-5xl md:text-6xl lg:text-7xl font-serif font-medium leading-[1.02] text-balance animate-fade-up" style={{ animationDelay: "60ms" }}>
+            <h1 className="mt-5 text-5xl md:text-6xl lg:text-7xl font-serif font-semibold leading-[1.02] text-balance animate-fade-up tracking-tight" style={{ animationDelay: "60ms" }}>
               Healing hands.<br />
-              <span className="italic text-primary">Hopeful</span> hearts.
+              <span className="text-primary">Hopeful</span> hearts.
             </h1>
             <p className="mt-6 max-w-xl text-lg text-muted-foreground text-pretty animate-fade-up" style={{ animationDelay: "120ms" }}>
               For over two decades, Kute Hospital has been Sangamner's trusted home for compassionate, modern healthcare — from 24×7 emergency to gentle maternity care.
@@ -49,19 +50,34 @@ const Index = () => {
           </div>
 
           <div className="lg:col-span-6 relative">
-            <div className="relative aspect-[5/6] rounded-[2rem] overflow-hidden shadow-elegant animate-scale-in">
-              <img src={exteriorImg} alt="Kute Hospital exterior" className="w-full h-full object-cover" width={1024} height={576} />
-              <div className="absolute inset-0 bg-gradient-to-t from-primary/40 via-transparent to-transparent" />
-            </div>
-            <div className="hidden md:flex absolute -left-6 bottom-10 glass-card p-5 max-w-[260px] gap-4 animate-fade-up" style={{ animationDelay: "320ms" }}>
-              <div className="grid place-items-center w-11 h-11 rounded-xl bg-primary-soft text-primary"><Clock className="w-5 h-5" /></div>
-              <div>
-                <div className="text-sm font-medium">24×7 Emergency</div>
-                <div className="text-xs text-muted-foreground">Critical care, always on.</div>
+            <div className="relative grid grid-cols-5 grid-rows-6 gap-4 h-[600px]">
+              {/* Main exterior image */}
+              <div className="col-span-5 row-span-4 relative rounded-[2rem] overflow-hidden shadow-elegant animate-scale-in">
+                <img src={exteriorImg} alt="Kute Hospital exterior" className="w-full h-full object-cover" width={1024} height={576} />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/40 via-transparent to-transparent" />
+              </div>
+
+              {/* Dr. Kute portrait card */}
+              <div className="col-span-2 row-span-2 relative rounded-[1.5rem] overflow-hidden shadow-elegant ring-4 ring-background animate-scale-in" style={{ animationDelay: "200ms" }}>
+                <img src={drKuteImg} alt="Dr. Pradeep Kute" className="w-full h-full object-cover" loading="lazy" />
+                <div className="absolute inset-x-0 bottom-0 p-3 bg-gradient-to-t from-primary/95 to-transparent text-primary-foreground">
+                  <div className="text-[11px] uppercase tracking-wider opacity-80">Founder</div>
+                  <div className="text-sm font-semibold leading-tight">Dr. Pradeep Kute</div>
+                </div>
+              </div>
+
+              {/* Stats / care card */}
+              <div className="col-span-3 row-span-2 relative rounded-[1.5rem] overflow-hidden shadow-elegant animate-scale-in bg-gradient-warm p-6 flex flex-col justify-between text-primary-foreground" style={{ animationDelay: "300ms" }}>
+                <div>
+                  <Clock className="w-6 h-6 opacity-90" />
+                  <div className="mt-3 text-sm font-medium leading-snug">24×7 Emergency &amp; Ambulance</div>
+                </div>
+                <div className="text-xs opacity-90">Critical care, always on.</div>
               </div>
             </div>
-            <div className="hidden md:flex absolute -right-4 top-10 glass-card p-5 max-w-[260px] gap-4 animate-fade-up" style={{ animationDelay: "360ms" }}>
-              <div className="grid place-items-center w-11 h-11 rounded-xl bg-accent/10 text-accent"><ShieldCheck className="w-5 h-5" /></div>
+
+            <div className="hidden md:flex absolute -right-4 top-10 glass-card p-5 max-w-[260px] gap-4 animate-fade-up z-10" style={{ animationDelay: "360ms" }}>
+              <div className="grid place-items-center w-11 h-11 rounded-xl bg-accent/10 text-accent shrink-0"><ShieldCheck className="w-5 h-5" /></div>
               <div>
                 <div className="text-sm font-medium">Cashless Insurance</div>
                 <div className="text-xs text-muted-foreground">PMJAY · MahaPreet · TPAs</div>
