@@ -31,9 +31,10 @@
     --muted: 40 20% 94%;
     --muted-foreground: 200 12% 40%;
 
-    /* Accent: warm coral for CTAs / emergency hints */
-    --accent: 14 75% 56%;
+    /* Accent: warm Kute orange for CTAs / emergency hints */
+    --accent: 22 92% 54%;
     --accent-foreground: 40 33% 97%;
+    --accent-soft: 28 95% 94%;
 
     --destructive: 0 75% 50%;
     --destructive-foreground: 40 33% 97%;
@@ -48,7 +49,8 @@
     --gradient-hero: linear-gradient(135deg, hsl(184 65% 18% / 0.85), hsl(174 55% 32% / 0.65));
     --gradient-soft: linear-gradient(180deg, hsl(40 33% 97%), hsl(174 40% 96%));
     --gradient-primary: linear-gradient(135deg, hsl(184 65% 24%), hsl(174 55% 38%));
-    --gradient-accent: linear-gradient(135deg, hsl(14 75% 56%), hsl(20 80% 62%));
+    --gradient-accent: linear-gradient(135deg, hsl(22 92% 54%), hsl(32 96% 60%));
+    --gradient-warm: linear-gradient(135deg, hsl(184 65% 24%), hsl(22 92% 54%));
 
     /* Shadows */
     --shadow-soft: 0 1px 2px hsl(184 30% 15% / 0.04), 0 8px 24px -12px hsl(184 30% 15% / 0.12);
@@ -128,6 +130,7 @@
   .bg-gradient-soft { background-image: var(--gradient-soft); }
   .bg-gradient-primary { background-image: var(--gradient-primary); }
   .bg-gradient-accent { background-image: var(--gradient-accent); }
+  .bg-gradient-warm { background-image: var(--gradient-warm); }
 
   .shadow-soft { box-shadow: var(--shadow-soft); }
   .shadow-card { box-shadow: var(--shadow-card); }
