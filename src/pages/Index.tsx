@@ -91,7 +91,7 @@ const Index = () => {
             return (
               <Link
                 key={s.slug}
-                to="/services"
+                to={`/services/${s.slug}`}
                 className="group p-7 rounded-3xl bg-card border border-border/60 shadow-soft hover:shadow-card hover:-translate-y-1 transition-all duration-500"
                 style={{ animationDelay: `${i * 60}ms` }}
               >
