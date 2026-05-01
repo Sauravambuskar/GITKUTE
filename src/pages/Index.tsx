@@ -50,7 +50,7 @@ const Index = () => {
 
           <div className="lg:col-span-6 relative">
             <div className="relative aspect-[5/6] rounded-[2rem] overflow-hidden shadow-elegant animate-scale-in">
-              <img src={heroImg} alt="Kute Hospital exterior" className="w-full h-full object-cover" width={1024} height={576} />
+              <img src={exteriorImg} alt="Kute Hospital exterior" className="w-full h-full object-cover" width={1024} height={576} />
               <div className="absolute inset-0 bg-gradient-to-t from-primary/40 via-transparent to-transparent" />
             </div>
             <div className="hidden md:flex absolute -left-6 bottom-10 glass-card p-5 max-w-[260px] gap-4 animate-fade-up" style={{ animationDelay: "320ms" }}>
@@ -151,9 +151,15 @@ const Index = () => {
       <section className="container-wide py-24">
         <div className="relative overflow-hidden rounded-[2.5rem] bg-primary text-primary-foreground p-10 md:p-16 grid lg:grid-cols-12 gap-10 items-center">
           <div className="absolute -right-24 -top-24 w-96 h-96 rounded-full bg-primary-glow/30 blur-3xl" />
+          <div className="absolute -left-24 -bottom-24 w-96 h-96 rounded-full bg-accent/20 blur-3xl" />
           <div className="lg:col-span-5 relative">
-            <div className="aspect-[4/5] rounded-3xl overflow-hidden shadow-elegant ring-1 ring-primary-foreground/10">
-              <img src={drKuteImg} alt="Dr. Pradeep Kute" className="w-full h-full object-cover" loading="lazy" />
+            <div className="aspect-square rounded-[2rem] bg-primary-foreground/95 shadow-elegant ring-1 ring-primary-foreground/10 grid place-items-center p-6">
+              <img
+                src={drCheckupImg}
+                alt="Dr. Pradeep Kute attending to a patient"
+                className="max-w-full max-h-full w-auto h-auto object-contain"
+                loading="lazy"
+              />
             </div>
           </div>
           <div className="lg:col-span-7 relative">
