@@ -2,9 +2,9 @@ import { Link } from "react-router-dom";
 import { ArrowRight, Phone, Calendar, Ambulance, Clock, ShieldCheck, Star, Quote } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SERVICES, TESTIMONIALS, STATS, VALUES, CONTACT } from "@/data/hospital";
-import heroImg from "@/assets/hospital/hero.jpg";
+import exteriorImg from "@/assets/hospital/exterior.jpg";
 import receptionImg from "@/assets/hospital/reception.jpg";
-import drKuteImg from "@/assets/hospital/dr-kute.jpg";
+import drCheckupImg from "@/assets/hospital/dr-checkup.png";
 import careImg from "@/assets/hospital/care.jpg";
 
 const Index = () => {
@@ -50,7 +50,7 @@ const Index = () => {
 
           <div className="lg:col-span-6 relative">
             <div className="relative aspect-[5/6] rounded-[2rem] overflow-hidden shadow-elegant animate-scale-in">
-              <img src={heroImg} alt="Kute Hospital exterior" className="w-full h-full object-cover" width={1024} height={576} />
+              <img src={exteriorImg} alt="Kute Hospital exterior" className="w-full h-full object-cover" width={1024} height={576} />
               <div className="absolute inset-0 bg-gradient-to-t from-primary/40 via-transparent to-transparent" />
             </div>
             <div className="hidden md:flex absolute -left-6 bottom-10 glass-card p-5 max-w-[260px] gap-4 animate-fade-up" style={{ animationDelay: "320ms" }}>
@@ -66,6 +66,32 @@ const Index = () => {
                 <div className="text-sm font-medium">Cashless Insurance</div>
                 <div className="text-xs text-muted-foreground">PMJAY · MahaPreet · TPAs</div>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* INTRO VIDEO */}
+      <section className="container-wide pt-8 pb-16">
+        <div className="text-center max-w-2xl mx-auto mb-10">
+          <div className="eyebrow justify-center"><span className="w-1.5 h-1.5 rounded-full bg-accent" /> Watch the tour</div>
+          <h2 className="mt-3 text-4xl md:text-5xl font-serif font-medium text-balance">
+            Step inside Kute Hospital.
+          </h2>
+          <p className="mt-4 text-muted-foreground">A short walk-through of our facility, our team, and the care we deliver every day.</p>
+        </div>
+        <div className="relative max-w-5xl mx-auto">
+          <div className="absolute -inset-4 bg-gradient-warm rounded-[2.5rem] opacity-20 blur-2xl" />
+          <div className="relative rounded-[2rem] overflow-hidden shadow-elegant ring-1 ring-border/60 bg-card">
+            <div className="aspect-video">
+              <iframe
+                className="w-full h-full"
+                src="https://www.youtube.com/embed/sP9eHwJOQIA?rel=0&modestbranding=1"
+                title="Kute Hospital — Introduction"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+                loading="lazy"
+              />
             </div>
           </div>
         </div>
@@ -151,9 +177,15 @@ const Index = () => {
       <section className="container-wide py-24">
         <div className="relative overflow-hidden rounded-[2.5rem] bg-primary text-primary-foreground p-10 md:p-16 grid lg:grid-cols-12 gap-10 items-center">
           <div className="absolute -right-24 -top-24 w-96 h-96 rounded-full bg-primary-glow/30 blur-3xl" />
+          <div className="absolute -left-24 -bottom-24 w-96 h-96 rounded-full bg-accent/20 blur-3xl" />
           <div className="lg:col-span-5 relative">
-            <div className="aspect-[4/5] rounded-3xl overflow-hidden shadow-elegant ring-1 ring-primary-foreground/10">
-              <img src={drKuteImg} alt="Dr. Pradeep Kute" className="w-full h-full object-cover" loading="lazy" />
+            <div className="aspect-square rounded-[2rem] bg-primary-foreground/95 shadow-elegant ring-1 ring-primary-foreground/10 grid place-items-center p-6">
+              <img
+                src={drCheckupImg}
+                alt="Dr. Pradeep Kute attending to a patient"
+                className="max-w-full max-h-full w-auto h-auto object-contain"
+                loading="lazy"
+              />
             </div>
           </div>
           <div className="lg:col-span-7 relative">
