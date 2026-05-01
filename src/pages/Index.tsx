@@ -71,6 +71,32 @@ const Index = () => {
         </div>
       </section>
 
+      {/* INTRO VIDEO */}
+      <section className="container-wide pt-8 pb-16">
+        <div className="text-center max-w-2xl mx-auto mb-10">
+          <div className="eyebrow justify-center"><span className="w-1.5 h-1.5 rounded-full bg-accent" /> Watch the tour</div>
+          <h2 className="mt-3 text-4xl md:text-5xl font-serif font-medium text-balance">
+            Step inside Kute Hospital.
+          </h2>
+          <p className="mt-4 text-muted-foreground">A short walk-through of our facility, our team, and the care we deliver every day.</p>
+        </div>
+        <div className="relative max-w-5xl mx-auto">
+          <div className="absolute -inset-4 bg-gradient-warm rounded-[2.5rem] opacity-20 blur-2xl" />
+          <div className="relative rounded-[2rem] overflow-hidden shadow-elegant ring-1 ring-border/60 bg-card">
+            <div className="aspect-video">
+              <iframe
+                className="w-full h-full"
+                src="https://www.youtube.com/embed/sP9eHwJOQIA?rel=0&modestbranding=1"
+                title="Kute Hospital — Introduction"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+                loading="lazy"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* SERVICES */}
       <section className="container-wide py-24">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14">
