@@ -15,10 +15,6 @@ const Footer = () => {
             Compassionate, modern multi-specialty care for Sangamner and surrounding regions since 2003.
           </p>
         </div>
-          <p className="mt-5 text-sm text-primary-foreground/70 leading-relaxed">
-            Compassionate, modern multi-specialty care for Sangamner and surrounding regions since 2003.
-          </p>
-        </div>
 
         <div>
           <div className="text-xs uppercase tracking-[0.2em] text-primary-foreground/60 mb-5">Explore</div>
