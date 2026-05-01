@@ -1,18 +1,20 @@
 import { Link } from "react-router-dom";
-import { Stethoscope, Phone, Mail, MapPin, Ambulance } from "lucide-react";
+import { Phone, Mail, MapPin, Ambulance } from "lucide-react";
 import { CONTACT } from "@/data/hospital";
+import logo from "@/assets/hospital/logo.png";
 
 const Footer = () => {
   return (
     <footer className="mt-32 bg-primary text-primary-foreground">
       <div className="container-wide py-20 grid gap-12 lg:grid-cols-4">
         <div className="lg:col-span-1">
-          <div className="flex items-center gap-3">
-            <span className="grid place-items-center w-10 h-10 rounded-2xl bg-primary-foreground/10">
-              <Stethoscope className="w-5 h-5" />
-            </span>
-            <div className="font-serif text-xl">Kute Hospital</div>
+          <div className="bg-primary-foreground rounded-2xl p-3 inline-block">
+            <img src={logo} alt="Kute Hospital" className="h-12 w-auto object-contain" />
           </div>
+          <p className="mt-5 text-sm text-primary-foreground/70 leading-relaxed">
+            Compassionate, modern multi-specialty care for Sangamner and surrounding regions since 2003.
+          </p>
+        </div>
           <p className="mt-5 text-sm text-primary-foreground/70 leading-relaxed">
             Compassionate, modern multi-specialty care for Sangamner and surrounding regions since 2003.
           </p>

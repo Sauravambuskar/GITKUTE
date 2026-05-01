@@ -1,8 +1,9 @@
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { Menu, X, Phone, Stethoscope } from "lucide-react";
+import { Menu, X, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { CONTACT } from "@/data/hospital";
+import logo from "@/assets/hospital/logo.png";
 
 const NAV = [
   { to: "/", label: "Home" },
@@ -35,13 +36,14 @@ const Header = () => {
     >
       <div className="container-wide flex items-center justify-between h-20">
         <Link to="/" className="flex items-center gap-3 group">
-          <span className="grid place-items-center w-10 h-10 rounded-2xl bg-gradient-primary text-primary-foreground shadow-soft group-hover:scale-105 transition-transform">
-            <Stethoscope className="w-5 h-5" />
+          <img
+            src={logo}
+            alt="Kute Hospital"
+            className="h-12 md:h-14 w-auto object-contain transition-transform group-hover:scale-[1.03]"
+          />
+          <span className="hidden sm:inline-block text-[11px] uppercase tracking-[0.2em] text-muted-foreground border-l border-border/70 pl-3 ml-1">
+            Sangamner<br />Since 2003
           </span>
-          <div className="leading-tight">
-            <div className="font-serif text-xl font-semibold tracking-tight">Kute Hospital</div>
-            <div className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground">Sangamner · Since 2003</div>
-          </div>
         </Link>
 
         <nav className="hidden lg:flex items-center gap-8">
