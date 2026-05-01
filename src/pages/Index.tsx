@@ -2,9 +2,9 @@ import { Link } from "react-router-dom";
 import { ArrowRight, Phone, Calendar, Ambulance, Clock, ShieldCheck, Star, Quote } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SERVICES, TESTIMONIALS, STATS, VALUES, CONTACT } from "@/data/hospital";
-import heroImg from "@/assets/hospital/hero.jpg";
+import exteriorImg from "@/assets/hospital/exterior.jpg";
 import receptionImg from "@/assets/hospital/reception.jpg";
-import drKuteImg from "@/assets/hospital/dr-kute.jpg";
+import drCheckupImg from "@/assets/hospital/dr-checkup.png";
 import careImg from "@/assets/hospital/care.jpg";
 
 const Index = () => {
