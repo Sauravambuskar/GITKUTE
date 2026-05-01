@@ -23,13 +23,23 @@ const Services = () => {
           {SERVICES.map((s) => {
             const Icon = s.icon;
             return (
-              <article key={s.slug} className="group p-8 rounded-3xl bg-card border border-border/60 shadow-soft hover:shadow-card hover:-translate-y-1 transition-all duration-500">
-                <div className="grid place-items-center w-12 h-12 rounded-2xl bg-primary-soft text-primary group-hover:bg-gradient-primary group-hover:text-primary-foreground transition-colors">
-                  <Icon className="w-6 h-6" />
+              <Link
+                to={`/services/${s.slug}`}
+                key={s.slug}
+                className="group relative p-8 rounded-3xl bg-card border border-border/60 shadow-soft hover:shadow-card hover:-translate-y-1 transition-all duration-500 overflow-hidden"
+              >
+                <div className="absolute -top-10 -right-10 w-32 h-32 rounded-full bg-accent-soft opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="relative">
+                  <div className="grid place-items-center w-12 h-12 rounded-2xl bg-primary-soft text-primary group-hover:bg-gradient-warm group-hover:text-primary-foreground transition-colors">
+                    <Icon className="w-6 h-6" />
+                  </div>
+                  <h3 className="mt-6 font-serif text-xl">{s.title}</h3>
+                  <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{s.body}</p>
+                  <div className="mt-5 inline-flex items-center gap-1 text-sm font-medium text-accent">
+                    Learn more <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                  </div>
                 </div>
-                <h3 className="mt-6 font-serif text-xl">{s.title}</h3>
-                <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{s.body}</p>
-              </article>
+              </Link>
             );
           })}
         </div>

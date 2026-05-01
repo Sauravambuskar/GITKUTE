@@ -31,7 +31,7 @@ const Index = () => {
                   <Calendar className="w-4 h-4" /> Book Appointment <ArrowRight className="w-4 h-4" />
                 </Link>
               </Button>
-              <Button asChild size="lg" variant="outline" className="rounded-full h-12 px-7 border-foreground/15 hover:bg-card">
+              <Button asChild size="lg" className="rounded-full h-12 px-7 bg-gradient-accent text-accent-foreground hover:opacity-95 shadow-soft">
                 <a href={`tel:${CONTACT.ambulance}`}>
                   <Ambulance className="w-4 h-4" /> Ambulance · {CONTACT.ambulance}
                 </a>
@@ -91,7 +91,7 @@ const Index = () => {
             return (
               <Link
                 key={s.slug}
-                to="/services"
+                to={`/services/${s.slug}`}
                 className="group p-7 rounded-3xl bg-card border border-border/60 shadow-soft hover:shadow-card hover:-translate-y-1 transition-all duration-500"
                 style={{ animationDelay: `${i * 60}ms` }}
               >
