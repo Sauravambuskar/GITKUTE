@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import SEO from "@/components/site/SEO";
 import PageHero from "@/components/site/PageHero";
 import { STATS, VALUES } from "@/data/hospital";
-const drKute = "https://backup.kutehospital.com/wp-content/uploads/2024/02/kutedr1-1024x384.png";
+import drKute from "@/assets/hospital/dr-kute.jpg";
 const reception = "https://backup.kutehospital.com/wp-content/uploads/2024/03/IMG_9901-1024x683.jpg";
 const care = "https://backup.kutehospital.com/wp-content/uploads/2024/03/IMG_9726-768x512.jpg";
 

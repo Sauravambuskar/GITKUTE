@@ -11,7 +11,22 @@ import pathologyImg from "@/assets/hospital/pathology.jpg";
 import receptionImg from "@/assets/hospital/reception.jpg";
 import drCheckupImg from "@/assets/hospital/dr-checkup.png";
 import heroImg from "@/assets/hospital/hero.jpg";
-
+// Real Kute Hospital photos
+const IMG = {
+  drKuteTeam:  "https://backup.kutehospital.com/wp-content/uploads/2024/02/1708542342224.jpg",
+  exterior:    "https://backup.kutehospital.com/wp-content/uploads/2024/02/im-1536x864.jpg",
+  drKute:      "https://backup.kutehospital.com/wp-content/uploads/2024/02/kutedr1-1024x384.png",
+  hall1:       "https://backup.kutehospital.com/wp-content/uploads/2024/03/IMG_9901-1024x683.jpg",
+  ward1:       "https://backup.kutehospital.com/wp-content/uploads/2024/03/IMG_9643-1024x683.jpg",
+  ward2:       "https://backup.kutehospital.com/wp-content/uploads/2024/03/IMG_9680-1024x683.jpg",
+  staff1:      "https://backup.kutehospital.com/wp-content/uploads/2024/03/IMG_9858-768x512.jpg",
+  staff2:      "https://backup.kutehospital.com/wp-content/uploads/2024/03/IMG_9877-768x512.jpg",
+  facility1:   "https://backup.kutehospital.com/wp-content/uploads/2024/03/IMG_9865-768x512.jpg",
+  facility2:   "https://backup.kutehospital.com/wp-content/uploads/2024/03/IMG_9927-768x512.jpg",
+  care1:       "https://backup.kutehospital.com/wp-content/uploads/2024/03/IMG_9726-768x512.jpg",
+  care2:       "https://backup.kutehospital.com/wp-content/uploads/2024/03/IMG_9870-768x512.jpg",
+  care3:       "https://backup.kutehospital.com/wp-content/uploads/2024/03/IMG_9717-768x512.jpg",
+};
 
 
 export const CONTACT = {
