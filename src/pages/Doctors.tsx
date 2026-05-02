@@ -3,15 +3,14 @@ import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import SEO from "@/components/site/SEO";
 import PageHero from "@/components/site/PageHero";
-import { DOCTORS } from "@/data/hospital";
+import { DOCTORS, VISITING_SPECIALISTS } from "@/data/hospital";
+import { Clock } from "lucide-react";
 import drKute from "@/assets/hospital/dr-kute.jpg";
 const staff1 = "https://backup.kutehospital.com/wp-content/uploads/2024/03/IMG_9858-768x512.jpg";
 const staff2 = "https://backup.kutehospital.com/wp-content/uploads/2024/03/IMG_9877-768x512.jpg";
 
 const Doctors = () => {
   const featured = DOCTORS.find((d) => d.featured)!;
-  const visiting = DOCTORS.filter((d) => !d.featured);
-
   return (
     <>
       <SEO
@@ -67,30 +66,30 @@ const Doctors = () => {
       </section>
 
       {/* Visiting specialists */}
-      <section className="container-wide py-20">
+      <section className="container-wide py-20 bg-muted/30">
         <div className="text-center max-w-2xl mx-auto">
           <div className="eyebrow justify-center">Visiting specialists</div>
           <h2 className="mt-3 text-4xl md:text-5xl font-serif font-medium text-balance">A full panel of consultants.</h2>
-          <p className="mt-4 text-muted-foreground">Visiting consultants across major specialties hold regular OPDs — please call to confirm timings.</p>
+          <p className="mt-4 text-muted-foreground">Visiting consultants across major specialties hold regular OPDs. Please call to confirm timings before visiting.</p>
         </div>
 
-        <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {visiting.map((d) => {
-            const Icon = d.icon!;
-            return (
-              <article key={d.name} className="p-8 rounded-3xl bg-card border border-border/60 shadow-soft hover:shadow-card hover:-translate-y-1 transition-all duration-500">
-                <div className="grid place-items-center w-14 h-14 rounded-2xl bg-gradient-primary text-primary-foreground"><Icon className="w-7 h-7" /></div>
-                <h3 className="mt-5 font-serif text-xl">{d.name}</h3>
-                <div className="text-xs text-primary mt-1">{d.role}</div>
-                <p className="mt-4 text-sm text-muted-foreground leading-relaxed">{d.bio}</p>
-                <div className="mt-5 flex flex-wrap gap-2">
-                  {d.specialties.map((s) => (
-                    <span key={s} className="px-2.5 py-1 rounded-full bg-muted text-muted-foreground text-[11px] font-medium">{s}</span>
-                  ))}
-                </div>
-              </article>
-            );
-          })}
+        <div className="mt-14 max-w-5xl mx-auto grid md:grid-cols-2 gap-6">
+          {VISITING_SPECIALISTS.map((group) => (
+            <div key={group.specialty} className="p-6 rounded-[2rem] bg-card border border-border/60 shadow-soft">
+              <h3 className="font-serif text-2xl text-primary mb-5">{group.specialty}</h3>
+              <div className="space-y-4">
+                {group.doctors.map((doc) => (
+                  <div key={doc.name} className="flex justify-between items-start gap-4 pb-4 border-b border-border/50 last:border-0 last:pb-0">
+                    <div className="font-medium">{doc.name}</div>
+                    <div className="flex items-center gap-1.5 text-sm text-muted-foreground shrink-0 text-right">
+                      <Clock className="w-3.5 h-3.5 opacity-70" />
+                      {doc.schedule}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 

@@ -197,24 +197,126 @@ export const DOCTORS = [
   },
 ];
 
+export const VISITING_SPECIALISTS = [
+  {
+    specialty: "Brain & Spine Surgeon",
+    doctors: [
+      { name: "Dr. Uday Bade", schedule: "Every Tuesday, Friday & Sunday" },
+      { name: "Dr. Anil Jadhav", schedule: "1st & 3rd Friday" },
+      { name: "Dr. Samir Phutane", schedule: "2nd & 4th Tuesday" }
+    ]
+  },
+  {
+    specialty: "Surgical Gastroenterologist",
+    doctors: [
+      { name: "Dr. Prakash Valse", schedule: "On call" },
+      { name: "Dr. Prashant Patil", schedule: "3rd Monday" },
+      { name: "Dr. Manoj Bhambre", schedule: "On call" }
+    ]
+  },
+  {
+    specialty: "Neurosurgeon",
+    doctors: [
+      { name: "Dr. Vijay Ghuge", schedule: "Every Wednesday" },
+      { name: "Dr. Nahush Patil", schedule: "1st & 3rd Friday" },
+      { name: "Dr. Ninad Thorat", schedule: "1st & 3rd Saturday" },
+      { name: "Dr. Dhananjay Duberkar", schedule: "2nd Wednesday" },
+      { name: "Dr. Sumant Biyani", schedule: "2nd & 4th Friday" },
+      { name: "Dr. Amit Yewale", schedule: "2nd & 4th Saturday" }
+    ]
+  },
+  {
+    specialty: "Uro Surgeon",
+    doctors: [
+      { name: "Dr. Narsingh Mane", schedule: "Every Wed & Sat" }
+    ]
+  },
+  {
+    specialty: "Nephrologist",
+    doctors: [
+      { name: "Dr. Pratik Shete", schedule: "Every Saturday" },
+      { name: "Dr. Nagesh Aghor", schedule: "2nd Wednesday" },
+      { name: "Dr. Prakash Ugale", schedule: "3rd Wednesday" }
+    ]
+  },
+  {
+    specialty: "Thyroid (Physician)",
+    doctors: [
+      { name: "Dr. Ashutosh Sonwane", schedule: "1st Sunday" }
+    ]
+  },
+  {
+    specialty: "Vascular Surgeon",
+    doctors: [
+      { name: "Dr. Ashutosh Aher", schedule: "2nd Tuesday" },
+      { name: "Dr. Pravin Narkhede", schedule: "2nd Friday" }
+    ]
+  },
+  {
+    specialty: "Pediatric Surgeon",
+    doctors: [
+      { name: "Dr. Satish Kapadnis", schedule: "2nd & 4th Wednesday" }
+    ]
+  },
+  {
+    specialty: "Psychiatrist",
+    doctors: [
+      { name: "Dr. Jyoti Ugale", schedule: "4th Thursday" }
+    ]
+  },
+  {
+    specialty: "Cancer Surgeon",
+    doctors: [
+      { name: "Dr. Vinayak Shenge", schedule: "On call" },
+      { name: "Dr. Sulabh Bhambre", schedule: "On call" }
+    ]
+  },
+  {
+    specialty: "Orthopedic Surgeon",
+    doctors: [
+      { name: "Dr. Nikhil Rahangdale", schedule: "On call" },
+      { name: "Dr. Amol Dange", schedule: "On call" }
+    ]
+  },
+  {
+    specialty: "Plastic Surgeon",
+    doctors: [
+      { name: "Dr. Lalit Darle", schedule: "Every Saturday" },
+      { name: "Dr. Sachin Wagh", schedule: "4th Saturday" }
+    ]
+  }
+];
+
 export const TESTIMONIALS = [
   {
-    name: "Ramesh Thorat",
-    location: "Ashvi Village",
-    treatment: "Gallbladder Surgery",
-    quote: "My stomach pain was unbearable. Dr. Kute did a laparoscopy surgery, and I was walking the very next day. The hospital is clean, and the staff is incredibly helpful.",
-  },
-  {
-    name: "Sunita Gunjal",
+    name: "Rakesh Shinde",
     location: "Sangamner",
-    treatment: "Maternity Delivery",
-    quote: "I delivered my baby boy here. The nurses were so caring, and the entire process was cashless because of my insurance. I felt totally safe.",
+    treatment: "General Care",
+    quote: "The cleanliness maintained by the hospital. Excellent service and ambiance, Doctors panel is very strong. The best hospital in sangamner city. well connected",
   },
   {
-    name: "Kishor Patil",
-    location: "Chandwad",
-    treatment: "Emergency Accident Care",
-    quote: "My brother had a bike accident on the highway. Kute Hospital's ambulance arrived in 15 minutes and the ICU care saved his life. We will forever be grateful.",
+    name: "Vaishanvi Mahesh Murtadak",
+    location: "Sangamner",
+    treatment: "Consultation",
+    quote: "Dr. Pradeep Kute was fantastic. Knowledgeable, caring, and informative. Felt at ease and confident in receiving expert medical care. Highly recommended.",
+  },
+  {
+    name: "Somnath",
+    location: "Sangamner",
+    treatment: "Diagnostics",
+    quote: "One of the standout features of Kute Hospital is its state-of-the-art equipment, ensuring accurate diagnostics and effective treatments for patients.",
+  },
+  {
+    name: "Sachin",
+    location: "Sangamner",
+    treatment: "Surgery",
+    quote: "Thanks to the nurses, pre-op staff, and theater staff for their kindness and proficiency during my surgery. Grateful for everyone's care.",
+  },
+  {
+    name: "Anuj Sharma",
+    location: "Sangamner",
+    treatment: "General Care",
+    quote: "Kute Hospital: Where compassionate care and skilled professionals come together to ensure your well-being every step of the way.",
   },
 ];
 

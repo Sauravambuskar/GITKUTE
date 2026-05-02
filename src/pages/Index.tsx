@@ -181,8 +181,10 @@ const Index = () => {
       <section className="container-wide py-24">
         <div className="grid lg:grid-cols-12 gap-12 items-center">
           <div className="lg:col-span-6 grid grid-cols-2 gap-4">
-            <img src={realStaff1} alt="Kute Hospital staff" className="rounded-3xl aspect-[4/5] object-cover shadow-soft" loading="lazy" />
-            <img src={realStaff2} alt="Hospital care" className="rounded-3xl aspect-[4/5] object-cover shadow-soft mt-10" loading="lazy" />
+            <img src={realExterior} alt="Kute Hospital" className="rounded-3xl aspect-[4/5] object-cover shadow-soft" loading="lazy" />
+            <div className="rounded-3xl aspect-[4/5] bg-white shadow-soft mt-10 overflow-hidden relative border border-border/40">
+              <img src={drKuteImg} alt="Dr. Pradeep Kute" className="w-full h-full object-cover object-[center_20%]" loading="lazy" />
+            </div>
           </div>
           <div className="lg:col-span-6">
             <div className="eyebrow">About Kute Hospital</div>
