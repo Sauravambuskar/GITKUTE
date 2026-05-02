@@ -8,7 +8,7 @@ import { Label } from "@/components/ui/label";
 import { toast } from "@/hooks/use-toast";
 import PageHero from "@/components/site/PageHero";
 import { CONTACT } from "@/data/hospital";
-import reception from "@/assets/hospital/reception.jpg";
+const reception = "https://backup.kutehospital.com/wp-content/uploads/2024/03/IMG_9643-1024x683.jpg";
 
 const schema = z.object({
   name: z.string().trim().min(2, "Please enter your name").max(100),

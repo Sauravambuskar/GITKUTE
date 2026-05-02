@@ -17,9 +17,9 @@ const PageHero = ({ eyebrow, title, subtitle, image }: Props) => {
           <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/70 to-background" />
         </div>
       )}
-      <div className="relative container-wide py-24 md:py-32 text-center">
+      <div className="relative container-wide py-12 md:py-20 text-center">
         {eyebrow && <div className="eyebrow justify-center animate-fade-up">{eyebrow}</div>}
-        <h1 className="mt-5 text-5xl md:text-6xl lg:text-7xl font-serif font-medium leading-[1.05] text-balance animate-fade-up" style={{ animationDelay: "60ms" }}>
+        <h1 className="mt-5 text-4xl md:text-5xl lg:text-6xl font-serif font-medium leading-[1.05] text-balance animate-fade-up" style={{ animationDelay: "60ms" }}>
           {title}
         </h1>
         {subtitle && (

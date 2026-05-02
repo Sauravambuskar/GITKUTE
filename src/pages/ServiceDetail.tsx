@@ -3,21 +3,13 @@ import { ArrowRight, ArrowLeft, Check, Phone, Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SERVICES, CONTACT } from "@/data/hospital";
 
-import icu from "@/assets/hospital/icu.jpg";
-import pathology from "@/assets/hospital/pathology.jpg";
-import ot from "@/assets/hospital/ot.jpg";
-import care from "@/assets/hospital/care.jpg";
-import reception from "@/assets/hospital/reception.jpg";
-
-const IMAGES = { icu, pathology, ot, care, reception } as const;
-
 const ServiceDetail = () => {
   const { slug } = useParams();
   const service = SERVICES.find((s) => s.slug === slug);
   if (!service) return <Navigate to="/services" replace />;
 
   const Icon = service.icon;
-  const heroImg = IMAGES[service.image];
+  const heroImg = service.image;
   const others = SERVICES.filter((s) => s.slug !== service.slug).slice(0, 3);
 
   return (

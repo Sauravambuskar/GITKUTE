@@ -5,8 +5,8 @@ import logo from "@/assets/hospital/logo.png";
 
 const Footer = () => {
   return (
-    <footer className="mt-32 bg-primary text-primary-foreground">
-      <div className="container-wide py-20 grid gap-12 lg:grid-cols-4">
+    <footer className="mt-16 md:mt-24 bg-primary text-primary-foreground">
+      <div className="container-wide py-10 md:py-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
         <div className="lg:col-span-1">
           <div className="bg-primary-foreground rounded-2xl p-3 inline-block">
             <img src={logo} alt="Kute Hospital" className="h-12 w-auto object-contain" />

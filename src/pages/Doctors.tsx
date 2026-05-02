@@ -4,8 +4,8 @@ import { Button } from "@/components/ui/button";
 import PageHero from "@/components/site/PageHero";
 import { DOCTORS } from "@/data/hospital";
 import drKute from "@/assets/hospital/dr-kute.jpg";
-import staff1 from "@/assets/hospital/staff-1.jpg";
-import staff2 from "@/assets/hospital/staff-2.jpg";
+const staff1 = "https://backup.kutehospital.com/wp-content/uploads/2024/03/IMG_9858-768x512.jpg";
+const staff2 = "https://backup.kutehospital.com/wp-content/uploads/2024/03/IMG_9877-768x512.jpg";
 
 const Doctors = () => {
   const featured = DOCTORS.find((d) => d.featured)!;
@@ -25,7 +25,7 @@ const Doctors = () => {
         <div className="grid lg:grid-cols-12 gap-10 items-center">
           <div className="lg:col-span-5">
             <div className="rounded-3xl overflow-hidden shadow-elegant aspect-[4/5]">
-              <img src={drKute} alt={featured.name} className="w-full h-full object-cover" loading="lazy" />
+              <img src={drKute} alt={featured.name} className="w-full h-full object-cover object-right" loading="lazy" />
             </div>
           </div>
           <div className="lg:col-span-7">

@@ -3,13 +3,10 @@ import { ArrowRight, FileText, CreditCard, ClipboardList, Clock, Quote, Star } f
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
 import PageHero from "@/components/site/PageHero";
-import { FAQ, INSURANCE, TESTIMONIALS } from "@/data/hospital";
-import staff1 from "@/assets/hospital/staff-1.jpg";
-import staff2 from "@/assets/hospital/staff-2.jpg";
+import { FAQ, INSURANCE, TESTIMONIALS, HOSPITAL_IMAGES } from "@/data/hospital";
 import icu from "@/assets/hospital/icu.jpg";
 import pathology from "@/assets/hospital/pathology.jpg";
-import reception from "@/assets/hospital/reception.jpg";
-import care from "@/assets/hospital/care.jpg";
+const care = "https://backup.kutehospital.com/wp-content/uploads/2024/03/IMG_9726-768x512.jpg";
 
 const INFO = [
   { icon: ClipboardList, title: "What to bring", body: "Photo ID, prior medical reports, current medication list, and insurance/TPA card if applicable." },
@@ -17,8 +14,6 @@ const INFO = [
   { icon: CreditCard, title: "Billing & payment", body: "Cash, UPI, debit/credit card and cashless insurance accepted. Transparent itemised bills." },
   { icon: FileText, title: "Reports & records", body: "Pathology reports usually delivered the same day. Soft copies available on request." },
 ];
-
-const GALLERY = [reception, icu, pathology, staff1, care, staff2];
 
 const Patients = () => {
   return (
@@ -46,16 +41,32 @@ const Patients = () => {
         </div>
       </section>
 
-      {/* Gallery */}
+      {/* Gallery - all real hospital photos */}
       <section className="container-wide py-16">
         <div className="text-center max-w-2xl mx-auto mb-10">
           <div className="eyebrow justify-center">Inside Kute Hospital</div>
           <h2 className="mt-3 text-3xl md:text-4xl font-serif text-balance">A look at our facility.</h2>
+          <p className="mt-3 text-muted-foreground text-sm">Real photos from our hospital — wards, OPD, staff and patient care areas.</p>
         </div>
-        <div className="grid md:grid-cols-3 gap-4">
-          {GALLERY.map((src, i) => (
-            <div key={i} className={`rounded-3xl overflow-hidden shadow-soft ${i % 2 ? "md:translate-y-6" : ""}`}>
-              <img src={src} alt="Hospital facility" className="w-full aspect-[4/5] object-cover hover:scale-105 transition-transform duration-700" loading="lazy" />
+        {/* Featured large image */}
+        <div className="rounded-3xl overflow-hidden shadow-card mb-4">
+          <img
+            src={HOSPITAL_IMAGES[0].src}
+            alt={HOSPITAL_IMAGES[0].alt}
+            className="w-full h-[280px] sm:h-[400px] object-cover hover:scale-105 transition-transform duration-700"
+            loading="lazy"
+          />
+        </div>
+        {/* 3-column grid */}
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+          {HOSPITAL_IMAGES.slice(1).map((img, i) => (
+            <div key={i} className="rounded-2xl overflow-hidden shadow-soft">
+              <img
+                src={img.src}
+                alt={img.alt}
+                className="w-full aspect-[4/3] object-cover hover:scale-105 transition-transform duration-700"
+                loading="lazy"
+              />
             </div>
           ))}
         </div>

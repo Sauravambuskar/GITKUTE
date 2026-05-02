@@ -3,8 +3,8 @@ import { ArrowRight, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import PageHero from "@/components/site/PageHero";
 import { SERVICES, INSURANCE } from "@/data/hospital";
-import icu from "@/assets/hospital/icu.jpg";
-import pathology from "@/assets/hospital/pathology.jpg";
+import icu from "@/assets/hospital/pathology.jpg";
+import pathology from "@/assets/hospital/icu.jpg";
 import ot from "@/assets/hospital/ot.jpg";
 
 const Services = () => {
@@ -19,24 +19,28 @@ const Services = () => {
 
       {/* Service cards */}
       <section className="container-wide py-16">
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
-          {SERVICES.map((s) => {
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {SERVICES.map((s, i) => {
             const Icon = s.icon;
             return (
               <Link
-                to={`/services/${s.slug}`}
                 key={s.slug}
-                className="group relative p-8 rounded-3xl bg-card border border-border/60 shadow-soft hover:shadow-card hover:-translate-y-1 transition-all duration-500 overflow-hidden"
+                to={`/services/${s.slug}`}
+                className="group rounded-3xl bg-card border border-border/60 shadow-soft hover:shadow-card hover:-translate-y-1 transition-all duration-500 overflow-hidden flex flex-col"
+                style={{ animationDelay: `${i * 60}ms` }}
               >
-                <div className="absolute -top-10 -right-10 w-32 h-32 rounded-full bg-accent-soft opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                <div className="relative">
-                  <div className="grid place-items-center w-12 h-12 rounded-2xl bg-primary-soft text-primary group-hover:bg-gradient-warm group-hover:text-primary-foreground transition-colors">
-                    <Icon className="w-6 h-6" />
+                <div className="relative h-48 w-full overflow-hidden bg-muted">
+                  <img src={s.image} alt={s.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-60" />
+                  <div className="absolute bottom-4 left-4 w-10 h-10 rounded-xl bg-white/20 backdrop-blur-md text-white grid place-items-center">
+                    <Icon className="w-5 h-5" />
                   </div>
-                  <h3 className="mt-6 font-serif text-xl">{s.title}</h3>
-                  <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{s.body}</p>
-                  <div className="mt-5 inline-flex items-center gap-1 text-sm font-medium text-accent">
-                    Learn more <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                </div>
+                <div className="p-6 flex-1 flex flex-col">
+                  <h3 className="text-xl font-serif">{s.title}</h3>
+                  <p className="mt-2 text-sm text-muted-foreground leading-relaxed flex-1">{s.body}</p>
+                  <div className="mt-5 inline-flex items-center gap-1 text-sm font-medium text-primary opacity-80 group-hover:opacity-100 transition-opacity">
+                    Learn more <ArrowRight className="w-4 h-4" />
                   </div>
                 </div>
               </Link>
