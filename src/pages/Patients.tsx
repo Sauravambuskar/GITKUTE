@@ -5,8 +5,7 @@ import { Button } from "@/components/ui/button";
 import SEO from "@/components/site/SEO";
 import PageHero from "@/components/site/PageHero";
 import { FAQ, INSURANCE, TESTIMONIALS, HOSPITAL_IMAGES } from "@/data/hospital";
-import icu from "@/assets/hospital/icu.jpg";
-import pathology from "@/assets/hospital/pathology.jpg";
+
 const care = "https://backup.kutehospital.com/wp-content/uploads/2024/03/IMG_9726-768x512.jpg";
 
 const INFO = [

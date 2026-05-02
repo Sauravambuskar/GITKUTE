@@ -3,12 +3,11 @@ import { ArrowRight, Phone, Calendar, Ambulance, Clock, ShieldCheck, Star, Quote
 import { Button } from "@/components/ui/button";
 import SEO from "@/components/site/SEO";
 import { SERVICES, TESTIMONIALS, STATS, VALUES, CONTACT, DOCTORS } from "@/data/hospital";
-import exteriorImg from "@/assets/hospital/exterior.jpg";
-import receptionImg from "@/assets/hospital/reception.jpg";
-import drKuteImg from "@/assets/hospital/dr-kute.jpg";
+
+const drKuteImg = "https://backup.kutehospital.com/wp-content/uploads/2024/02/kutedr1-1024x384.png";
 const careImg = "https://backup.kutehospital.com/wp-content/uploads/2024/03/IMG_9726-768x512.jpg";
 const realExterior = "https://backup.kutehospital.com/wp-content/uploads/2024/02/im-1536x864.jpg";
-const realStaff1 = "https://backup.kutehospital.com/wp-content/uploads/2024/03/IMG_9858-768x512.jpg";
+const realStaff1 = "https://backup.kutehospital.com/wp-content/uploads/2024/02/1708542342224.jpg"; // Dr Kute with patient
 const realStaff2 = "https://backup.kutehospital.com/wp-content/uploads/2024/03/IMG_9877-768x512.jpg";
 
 const Index = () => {

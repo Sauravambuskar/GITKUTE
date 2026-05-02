@@ -4,8 +4,9 @@ import {
   Bone, Brain, Eye, Smile, Syringe, Pill, ShieldCheck, Hospital,
 } from "lucide-react";
 
-import icuImg from "@/assets/hospital/pathology.jpg";
-import otImg from "@/assets/hospital/ot.jpg";
+// ICU and OT real hospital photos
+const icuImg = "https://backup.kutehospital.com/wp-content/uploads/2024/03/IMG_9865-768x512.jpg";
+const otImg  = "https://backup.kutehospital.com/wp-content/uploads/2024/03/IMG_9927-768x512.jpg";
 
 // Real Kute Hospital photos
 const IMG = {
@@ -24,9 +25,12 @@ const IMG = {
   care3:       "https://backup.kutehospital.com/wp-content/uploads/2024/03/IMG_9717-768x512.jpg",
 };
 
-const careImg    = IMG.care1;
-const staff1Img  = IMG.staff1;
-const staff2Img  = IMG.staff2;
+const careImg      = IMG.care1;
+const staff1Img    = IMG.staff1;
+const staff2Img    = IMG.staff2;
+const pathologyImg = IMG.facility1;   // real hospital facility photo
+const exteriorImg  = IMG.exterior;    // real hospital exterior photo
+
 
 
 export const CONTACT = {
@@ -110,7 +114,7 @@ export const SERVICES = [
     icon: Baby,
     short: "Safe deliveries and caring doctors for your baby's health.",
     body: "Antenatal care, normal and caesarean deliveries, newborn care, immunisation and pediatric consultations under one roof.",
-    image: "https://drkumarshospital.com/wp-content/uploads/2025/05/mater.jpg",
+    image: IMG.ward2,
     features: [
       "Antenatal & postnatal care",
       "Normal & caesarean deliveries",

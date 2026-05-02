@@ -9,7 +9,7 @@ import { toast } from "@/hooks/use-toast";
 import SEO from "@/components/site/SEO";
 import PageHero from "@/components/site/PageHero";
 import { CONTACT } from "@/data/hospital";
-const reception = "https://backup.kutehospital.com/wp-content/uploads/2024/03/IMG_9643-1024x683.jpg";
+const reception = "https://backup.kutehospital.com/wp-content/uploads/2024/02/im-1536x864.jpg"; // Hospital exterior for contact page
 
 const schema = z.object({
   name: z.string().trim().min(2, "Please enter your name").max(100),
