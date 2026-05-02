@@ -4,10 +4,9 @@ import { Button } from "@/components/ui/button";
 import SEO from "@/components/site/SEO";
 import PageHero from "@/components/site/PageHero";
 import { SERVICES, INSURANCE } from "@/data/hospital";
-// Real hospital photos — contextually assigned
-const icu        = "https://backup.kutehospital.com/wp-content/uploads/2024/03/IMG_9865-768x512.jpg"; // hospital facility (ICU area)
-const pathology  = "https://backup.kutehospital.com/wp-content/uploads/2024/03/IMG_9870-768x512.jpg"; // clinical care (pathology)
-const ot         = "https://backup.kutehospital.com/wp-content/uploads/2024/03/IMG_9927-768x512.jpg"; // treatment room (OT)
+import icu from "@/assets/hospital/icu.jpg";
+import pathology from "@/assets/hospital/pathology.jpg";
+import ot from "@/assets/hospital/ot.jpg";
 
 
 const Services = () => {

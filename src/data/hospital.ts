@@ -4,32 +4,13 @@ import {
   Bone, Brain, Eye, Smile, Syringe, Pill, ShieldCheck, Hospital,
 } from "lucide-react";
 
-// ICU and OT real hospital photos
-const icuImg = "https://backup.kutehospital.com/wp-content/uploads/2024/03/IMG_9865-768x512.jpg";
-const otImg  = "https://backup.kutehospital.com/wp-content/uploads/2024/03/IMG_9927-768x512.jpg";
-
-// Real Kute Hospital photos
-const IMG = {
-  drKuteTeam:  "https://backup.kutehospital.com/wp-content/uploads/2024/02/1708542342224.jpg",
-  exterior:    "https://backup.kutehospital.com/wp-content/uploads/2024/02/im-1536x864.jpg",
-  drKute:      "https://backup.kutehospital.com/wp-content/uploads/2024/02/kutedr1-1024x384.png",
-  hall1:       "https://backup.kutehospital.com/wp-content/uploads/2024/03/IMG_9901-1024x683.jpg",
-  ward1:       "https://backup.kutehospital.com/wp-content/uploads/2024/03/IMG_9643-1024x683.jpg",
-  ward2:       "https://backup.kutehospital.com/wp-content/uploads/2024/03/IMG_9680-1024x683.jpg",
-  staff1:      "https://backup.kutehospital.com/wp-content/uploads/2024/03/IMG_9858-768x512.jpg",
-  staff2:      "https://backup.kutehospital.com/wp-content/uploads/2024/03/IMG_9877-768x512.jpg",
-  facility1:   "https://backup.kutehospital.com/wp-content/uploads/2024/03/IMG_9865-768x512.jpg",
-  facility2:   "https://backup.kutehospital.com/wp-content/uploads/2024/03/IMG_9927-768x512.jpg",
-  care1:       "https://backup.kutehospital.com/wp-content/uploads/2024/03/IMG_9726-768x512.jpg",
-  care2:       "https://backup.kutehospital.com/wp-content/uploads/2024/03/IMG_9870-768x512.jpg",
-  care3:       "https://backup.kutehospital.com/wp-content/uploads/2024/03/IMG_9717-768x512.jpg",
-};
-
-const careImg      = IMG.care1;
-const staff1Img    = IMG.staff1;
-const staff2Img    = IMG.staff2;
-const pathologyImg = IMG.facility1;   // real hospital facility photo
-const exteriorImg  = IMG.exterior;    // real hospital exterior photo
+import icuImg from "@/assets/hospital/icu.jpg";
+import otImg from "@/assets/hospital/ot.jpg";
+import careImg from "@/assets/hospital/care.jpg";
+import pathologyImg from "@/assets/hospital/pathology.jpg";
+import receptionImg from "@/assets/hospital/reception.jpg";
+import drCheckupImg from "@/assets/hospital/dr-checkup.png";
+import heroImg from "@/assets/hospital/hero.jpg";
 
 
 
@@ -114,7 +95,7 @@ export const SERVICES = [
     icon: Baby,
     short: "Safe deliveries and caring doctors for your baby's health.",
     body: "Antenatal care, normal and caesarean deliveries, newborn care, immunisation and pediatric consultations under one roof.",
-    image: IMG.ward2,
+    image: receptionImg,
     features: [
       "Antenatal & postnatal care",
       "Normal & caesarean deliveries",
@@ -158,7 +139,7 @@ export const SERVICES = [
     icon: Ambulance,
     short: "Fast emergency pickup from anywhere in Sangamner taluka.",
     body: "Oxygen-equipped ambulance with trained paramedic available 24×7 for emergency pickup and inter-hospital transfers.",
-    image: exteriorImg,
+    image: heroImg,
     features: [
       "24×7 availability",
       "Oxygen, suction & basic life support",
