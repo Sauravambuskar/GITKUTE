@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import SEO from "@/components/site/SEO";
 import PageHero from "@/components/site/PageHero";
 import { STATS, VALUES } from "@/data/hospital";
 import drKute from "@/assets/hospital/dr-kute.jpg";
@@ -10,6 +11,12 @@ const care = "https://backup.kutehospital.com/wp-content/uploads/2024/03/IMG_972
 const About = () => {
   return (
     <>
+      <SEO
+        canonical="/about"
+        title="About Kute Hospital — Our Story, Values & Dr. Pradeep Kute"
+        description="Founded by Dr. Pradeep Kute (MS General Surgery), Kute Hospital has served Sangamner since 2010 with compassionate, modern multi-specialty healthcare. Learn about our team and values."
+        image="https://backup.kutehospital.com/wp-content/uploads/2024/03/IMG_9901-1024x683.jpg"
+      />
       <PageHero
         eyebrow="Our story"
         title={<>Care that started with a <em className="italic text-primary">single promise.</em></>}

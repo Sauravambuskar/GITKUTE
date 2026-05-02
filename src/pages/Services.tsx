@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import SEO from "@/components/site/SEO";
 import PageHero from "@/components/site/PageHero";
 import { SERVICES, INSURANCE } from "@/data/hospital";
 import icu from "@/assets/hospital/pathology.jpg";
@@ -10,6 +11,12 @@ import ot from "@/assets/hospital/ot.jpg";
 const Services = () => {
   return (
     <>
+      <SEO
+        canonical="/services"
+        title="Hospital Services in Sangamner — Surgery, ICU, Maternity, Pathology"
+        description="Kute Hospital Sangamner offers 24×7 emergency & ICU, laparoscopy (keyhole surgery), maternity & childcare, pathology lab, ambulance service, and general OPD. Expert care close to home."
+        image="https://backup.kutehospital.com/wp-content/uploads/2024/03/IMG_9858-768x512.jpg"
+      />
       <PageHero
         eyebrow="Our services"
         title={<>Modern medicine, <em className="italic text-primary">gentle hands.</em></>}

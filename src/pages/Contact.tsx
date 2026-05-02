@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { toast } from "@/hooks/use-toast";
+import SEO from "@/components/site/SEO";
 import PageHero from "@/components/site/PageHero";
 import { CONTACT } from "@/data/hospital";
 const reception = "https://backup.kutehospital.com/wp-content/uploads/2024/03/IMG_9643-1024x683.jpg";
@@ -43,6 +44,12 @@ const Contact = () => {
 
   return (
     <>
+      <SEO
+        canonical="/contact"
+        title="Contact Kute Hospital Sangamner — Appointments, Helpline & Ambulance"
+        description="Contact Kute Hospital Sangamner. Book an appointment, call our 24×7 helpline (+91 88888 82225) or ambulance (+91 88883 72225). OPD Mon–Sat 9 AM–8 PM. Emergency always open."
+        image="https://backup.kutehospital.com/wp-content/uploads/2024/03/IMG_9643-1024x683.jpg"
+      />
       <PageHero
         eyebrow="Contact"
         title={<>Reach out — we're <em className="italic text-primary">here for you.</em></>}

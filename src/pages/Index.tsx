@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, Phone, Calendar, Ambulance, Clock, ShieldCheck, Star, Quote, Camera, MapPin, User, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import SEO from "@/components/site/SEO";
 import { SERVICES, TESTIMONIALS, STATS, VALUES, CONTACT, DOCTORS } from "@/data/hospital";
 import exteriorImg from "@/assets/hospital/exterior.jpg";
 import receptionImg from "@/assets/hospital/reception.jpg";
@@ -13,6 +14,12 @@ const realStaff2 = "https://backup.kutehospital.com/wp-content/uploads/2024/03/I
 const Index = () => {
   return (
     <>
+      <SEO
+        canonical="/"
+        title="Kute Hospital — Expert Surgery & 24×7 Emergency Care in Sangamner"
+        description="Kute Hospital in Sangamner offers expert laparoscopy, 24×7 ICU & emergency care, maternity services, pathology lab, and visiting specialists. Call +91 88888 82225 to book."
+        image="https://backup.kutehospital.com/wp-content/uploads/2024/02/im-1536x864.jpg"
+      />
       {/* HERO */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-soft" />

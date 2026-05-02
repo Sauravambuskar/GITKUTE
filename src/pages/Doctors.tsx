@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import SEO from "@/components/site/SEO";
 import PageHero from "@/components/site/PageHero";
 import { DOCTORS } from "@/data/hospital";
 import drKute from "@/assets/hospital/dr-kute.jpg";
@@ -13,6 +14,26 @@ const Doctors = () => {
 
   return (
     <>
+      <SEO
+        canonical="/doctors"
+        title="Our Doctors — Dr. Pradeep Kute & Specialists at Kute Hospital Sangamner"
+        description="Meet Dr. Pradeep Kute (MBBS, MS General Surgery) and visiting consultants at Kute Hospital Sangamner — orthopaedics, cardiology, gynaecology, neurology and more."
+        image="https://backup.kutehospital.com/wp-content/uploads/2024/02/1708542342224.jpg"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "Physician",
+          name: "Dr. Pradeep Kute",
+          description: "Senior Consultant Surgeon specialising in General Surgery and Laparoscopy. Founder of Kute Hospital, Sangamner.",
+          medicalSpecialty: ["General Surgery", "Laparoscopy", "Trauma Surgery"],
+          worksFor: { "@type": "MedicalOrganization", name: "Kute Hospital", url: "https://kutehospital.com" },
+          address: {
+            "@type": "PostalAddress",
+            addressLocality: "Sangamner",
+            addressRegion: "Maharashtra",
+            addressCountry: "IN",
+          },
+        }}
+      />
       <PageHero
         eyebrow="Our doctors"
         title={<>Skilled specialists. <em className="italic text-primary">Caring people.</em></>}

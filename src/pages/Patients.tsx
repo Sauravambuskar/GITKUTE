@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight, FileText, CreditCard, ClipboardList, Clock, Quote, Star } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
+import SEO from "@/components/site/SEO";
 import PageHero from "@/components/site/PageHero";
 import { FAQ, INSURANCE, TESTIMONIALS, HOSPITAL_IMAGES } from "@/data/hospital";
 import icu from "@/assets/hospital/icu.jpg";
@@ -18,6 +19,12 @@ const INFO = [
 const Patients = () => {
   return (
     <>
+      <SEO
+        canonical="/patients"
+        title="Patient Information — OPD Timings, Insurance & What to Bring | Kute Hospital"
+        description="Everything you need before visiting Kute Hospital Sangamner — OPD timings, what to bring, billing, insurance partners (Star Health, PMJAY, HDFC ERGO), reports and FAQs."
+        image="https://backup.kutehospital.com/wp-content/uploads/2024/03/IMG_9726-768x512.jpg"
+      />
       <PageHero
         eyebrow="For patients"
         title={<>Everything you need, <em className="italic text-primary">in one place.</em></>}
