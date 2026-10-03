@@ -16,7 +16,7 @@ interface SEOProps {
 
 const SEO = ({
   title,
-  description = "Kute Hospital, Sangamner — modern multi-specialty hospital with 24×7 emergency & ICU, laparoscopy surgery, pathology lab, maternity care, and visiting specialists.",
+  description = "Kute Hospital, Sangamner — a 50-bed multi-specialty hospital with eight departments, dedicated ICUs, 24×7 emergency, pharmacy and cashless support.",
   canonical,
   image = OG_IMAGE,
   type = "website",
@@ -59,9 +59,12 @@ const SEO = ({
     ],
     medicalSpecialty: [
       "General Surgery",
-      "Laparoscopy",
-      "Emergency Medicine",
-      "Obstetrics",
+      "Internal Medicine",
+      "Orthopedics",
+      "Cardiovascular",
+      "Nephrology",
+      "Urologic",
+      "Radiography",
       "Pathology",
     ],
     hasMap: "https://www.google.com/maps?q=Sangamner,Maharashtra",
@@ -91,7 +94,7 @@ const SEO = ({
       {/* Keywords */}
       <meta
         name="keywords"
-        content="Kute Hospital, hospital Sangamner, multi-specialty hospital Sangamner, laparoscopy Sangamner, ICU Sangamner, 24x7 emergency Sangamner, Dr Pradeep Kute, pathology lab Sangamner, maternity hospital Sangamner, ambulance Sangamner"
+        content="Kute Hospital, hospital Sangamner, general surgery Sangamner, general medicine Sangamner, orthopaedics Sangamner, cardiology Sangamner, nephrology Sangamner, urology Sangamner, radiology Sangamner, pathology lab Sangamner, ICU Sangamner, 24x7 emergency Sangamner"
       />
 
       {/* Open Graph */}
