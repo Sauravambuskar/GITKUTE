@@ -1,12 +1,13 @@
-import { Link, useParams, Navigate } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { ArrowRight, ArrowLeft, Check, Phone, Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SERVICES, CONTACT } from "@/data/hospital";
+import NotFound from "./NotFound";
 
 const ServiceDetail = () => {
   const { slug } = useParams();
   const service = SERVICES.find((s) => s.slug === slug);
-  if (!service) return <Navigate to="/services" replace />;
+  if (!service) return <NotFound />;
 
   const Icon = service.icon;
   const heroImg = service.image;
