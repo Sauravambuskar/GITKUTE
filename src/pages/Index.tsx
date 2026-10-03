@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight, Phone, Calendar, Ambulance, Clock, ShieldCheck, Star, Quote, Camera, MapPin, User, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import SEO from "@/components/site/SEO";
-import { SERVICES, TESTIMONIALS, STATS, VALUES, CONTACT, DOCTORS } from "@/data/hospital";
+import { SERVICES, TESTIMONIALS, STATS, VALUES, CONTACT } from "@/data/hospital";
 
 import drKuteImg from "@/assets/hospital/dr-kute.jpg";
 const careImg = "https://backup.kutehospital.com/wp-content/uploads/2024/03/IMG_9726-768x512.jpg";
@@ -16,7 +16,7 @@ const Index = () => {
       <SEO
         canonical="/"
         title="Kute Hospital — Expert Surgery & 24×7 Emergency Care in Sangamner"
-        description="Kute Hospital in Sangamner offers expert laparoscopy, 24×7 ICU & emergency care, maternity services, pathology lab, and visiting specialists. Call +91 88888 82225 to book."
+        description="Kute Hospital is a 50-bed multi-specialty hospital in Sangamner with eight departments, dedicated ICUs, 24×7 emergency, pharmacy and cashless support."
         image="https://backup.kutehospital.com/wp-content/uploads/2024/02/im-1536x864.jpg"
       />
       {/* HERO */}
@@ -28,10 +28,10 @@ const Index = () => {
               <span className="w-1.5 h-1.5 rounded-full bg-accent" /> Sangamner · Multi-specialty
             </div>
             <h1 className="mt-5 text-4xl md:text-5xl lg:text-6xl font-serif font-semibold leading-[1.02] text-balance animate-fade-up tracking-tight" style={{ animationDelay: "60ms" }}>
-              Expert laparoscopy &amp; surgical care
+              Complete multi-specialty care, close to home
             </h1>
             <p className="mt-6 max-w-xl text-lg text-muted-foreground text-pretty animate-fade-up" style={{ animationDelay: "120ms" }}>
-              For over 14 years, Kute Hospital has been Sangamner's trusted home for compassionate, modern healthcare — from 24×7 emergency to advanced keyhole surgeries.
+              For 16 years, Kute Hospital has served Sangamner with coordinated specialist care—now supported by 50 beds, dedicated ICUs and round-the-clock essential services.
             </p>
             <div className="mt-9 flex flex-wrap gap-3 animate-fade-up" style={{ animationDelay: "180ms" }}>
               <Button asChild size="lg" className="rounded-full bg-gradient-primary shadow-elegant hover:opacity-95 h-12 px-7">
@@ -147,7 +147,7 @@ const Index = () => {
           </Link>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {SERVICES.map((s, i) => {
             const Icon = s.icon;
             return (
@@ -246,7 +246,7 @@ const Index = () => {
             </h2>
             
             <p className="mt-6 text-primary-foreground/80 leading-relaxed max-w-xl text-lg">
-              With over 14 years of surgical excellence, Dr. Kute has performed thousands of successful procedures. He leads our team with an unwavering belief that every patient deserves compassionate, city-grade healthcare right here in Sangamner.
+              With 16 years of surgical excellence, Dr. Kute leads our team with an unwavering belief that every patient deserves compassionate, city-grade healthcare right here in Sangamner.
             </p>
             
             <div className="mt-10 flex flex-wrap gap-4">
@@ -316,8 +316,9 @@ const Index = () => {
                     <div>
                        <div className="font-semibold text-lg mb-1">Contact Numbers</div>
                        <div className="text-muted-foreground flex flex-col gap-1">
-                          <a href="tel:+919922140353" className="hover:text-primary transition-colors">+91 99221 40353 (Emergency)</a>
-                          <a href={`tel:${CONTACT.enquiry}`} className="hover:text-primary transition-colors">{CONTACT.enquiry} (OPD Enquiry)</a>
+                          <a href={`tel:${CONTACT.emergency}`} className="hover:text-primary transition-colors">{CONTACT.emergency} (Emergency)</a>
+                          <a href={`tel:${CONTACT.helpline}`} className="hover:text-primary transition-colors">{CONTACT.helpline} (Helpline)</a>
+                          <a href={`tel:${CONTACT.cardiology}`} className="hover:text-primary transition-colors">{CONTACT.cardiology} (Cardiology)</a>
                        </div>
                     </div>
                  </div>

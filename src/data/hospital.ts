@@ -1,7 +1,7 @@
-// Shared data for Kute Hospital across pages
+// Shared content for Kute Hospital across the website.
 import {
-  Stethoscope, HeartPulse, Activity, Microscope, Ambulance, Baby,
-  Bone, Brain, Eye, Smile, Syringe, Pill, ShieldCheck, Hospital,
+  Stethoscope, HeartPulse, Activity, Microscope, Ambulance, Bone,
+  ScanLine, TestTubes, ShieldCheck, Hospital, Pill, Droplets,
 } from "lucide-react";
 
 import icuImg from "@/assets/hospital/icu.jpg";
@@ -9,358 +9,174 @@ import otImg from "@/assets/hospital/ot.jpg";
 import careImg from "@/assets/hospital/care.jpg";
 import pathologyImg from "@/assets/hospital/pathology.jpg";
 import receptionImg from "@/assets/hospital/reception.jpg";
-import drCheckupImg from "@/assets/hospital/dr-checkup.png";
 import heroImg from "@/assets/hospital/hero.jpg";
-// Real Kute Hospital photos
-const IMG = {
-  drKuteTeam:  "https://backup.kutehospital.com/wp-content/uploads/2024/02/1708542342224.jpg",
-  exterior:    "https://backup.kutehospital.com/wp-content/uploads/2024/02/im-1536x864.jpg",
-  drKute:      "https://backup.kutehospital.com/wp-content/uploads/2024/02/kutedr1-1024x384.png",
-  hall1:       "https://backup.kutehospital.com/wp-content/uploads/2024/03/IMG_9901-1024x683.jpg",
-  ward1:       "https://backup.kutehospital.com/wp-content/uploads/2024/03/IMG_9643-1024x683.jpg",
-  ward2:       "https://backup.kutehospital.com/wp-content/uploads/2024/03/IMG_9680-1024x683.jpg",
-  staff1:      "https://backup.kutehospital.com/wp-content/uploads/2024/03/IMG_9858-768x512.jpg",
-  staff2:      "https://backup.kutehospital.com/wp-content/uploads/2024/03/IMG_9877-768x512.jpg",
-  facility1:   "https://backup.kutehospital.com/wp-content/uploads/2024/03/IMG_9865-768x512.jpg",
-  facility2:   "https://backup.kutehospital.com/wp-content/uploads/2024/03/IMG_9927-768x512.jpg",
-  care1:       "https://backup.kutehospital.com/wp-content/uploads/2024/03/IMG_9726-768x512.jpg",
-  care2:       "https://backup.kutehospital.com/wp-content/uploads/2024/03/IMG_9870-768x512.jpg",
-  care3:       "https://backup.kutehospital.com/wp-content/uploads/2024/03/IMG_9717-768x512.jpg",
-};
 
+const IMG = {
+  drKuteTeam: "https://backup.kutehospital.com/wp-content/uploads/2024/02/1708542342224.jpg",
+  exterior: "https://backup.kutehospital.com/wp-content/uploads/2024/02/im-1536x864.jpg",
+  drKute: "https://backup.kutehospital.com/wp-content/uploads/2024/02/kutedr1-1024x384.png",
+  hall1: "https://backup.kutehospital.com/wp-content/uploads/2024/03/IMG_9901-1024x683.jpg",
+  ward1: "https://backup.kutehospital.com/wp-content/uploads/2024/03/IMG_9643-1024x683.jpg",
+  ward2: "https://backup.kutehospital.com/wp-content/uploads/2024/03/IMG_9680-1024x683.jpg",
+  staff1: "https://backup.kutehospital.com/wp-content/uploads/2024/03/IMG_9858-768x512.jpg",
+  staff2: "https://backup.kutehospital.com/wp-content/uploads/2024/03/IMG_9877-768x512.jpg",
+  facility1: "https://backup.kutehospital.com/wp-content/uploads/2024/03/IMG_9865-768x512.jpg",
+  facility2: "https://backup.kutehospital.com/wp-content/uploads/2024/03/IMG_9927-768x512.jpg",
+  care1: "https://backup.kutehospital.com/wp-content/uploads/2024/03/IMG_9726-768x512.jpg",
+  care2: "https://backup.kutehospital.com/wp-content/uploads/2024/03/IMG_9870-768x512.jpg",
+  care3: "https://backup.kutehospital.com/wp-content/uploads/2024/03/IMG_9717-768x512.jpg",
+};
 
 export const CONTACT = {
   enquiry: "+91 88888 82225",
+  emergency: "+91 88888 82225",
   helpline: "+91 88887 32225",
-  ambulance: "+91 88883 72225",
-  email: "info@kutehospital.com",
-  address: "Sangamner City and Taluka, Maharashtra",
+  cardiology: "+91 88883 72225",
+  ambulance: "+91 88888 82225",
+  landlines: ["02425 226688", "02425 226686"],
+  emails: ["kutehospiandlaproscopycenter@gmail.com", "kutehospital.sangamner@gmail.com"],
+  email: "kutehospiandlaproscopycenter@gmail.com",
+  website: "www.kutehospital.com",
+  address: "Kute Hospital, 40 Feet DP Road, Sangamner, Maharashtra 422605",
 };
 
 export const SERVICES = [
   {
-    slug: "emergency-icu",
-    title: "24×7 Emergency & ICU",
-    icon: HeartPulse,
-    short: "Always open. Immediate care for accidents, heart attacks, and critical emergencies.",
-    body: "Our emergency department runs 24×7 with a fully equipped ICU, multi-para monitors, ventilators, and a trained critical care team ready for trauma, cardiac, and medical emergencies.",
-    image: icuImg,
-    features: [
-      "Multi-bed ICU with ventilators",
-      "Multi-para cardiac monitors",
-      "24×7 trained intensivists & nurses",
-      "Defibrillator & crash cart ready",
-      "Direct ambulance handover bay",
-      "Cashless insurance accepted",
-    ],
-    process: [
-      { step: "Triage", text: "Immediate assessment by emergency physician on arrival." },
-      { step: "Stabilise", text: "Oxygen, IV access, life-saving medication and monitoring." },
-      { step: "Investigate", text: "On-site lab & imaging for fast, accurate diagnosis." },
-      { step: "Admit / Discharge", text: "ICU admission, ward shift or discharge with care plan." },
-    ],
-  },
-  {
-    slug: "surgery",
-    title: "Laparoscopy (Keyhole Surgery)",
-    icon: Activity,
-    short: "Small cuts, less pain, faster healing for gallbladder, appendix, and hernias.",
-    body: "Performed by experienced surgeons in a sterile modular operating theatre, including laparoscopic, hernia, gallbladder, and trauma surgeries.",
+    slug: "general-surgery", title: "General Surgery", icon: Activity,
+    short: "Comprehensive open and laparoscopic surgical care with dedicated post-operative support.",
+    body: "The Department of General Surgery provides evaluation and treatment for common and complex surgical conditions, supported by a modern operation theatre, Surgical ICU and attentive post-operative care.",
     image: otImg,
-    features: [
-      "Laparoscopic gallbladder & appendix",
-      "Hernia repair (open & lap)",
-      "Trauma & accident surgeries",
-      "Abscess, cyst & lump removal",
-      "Sterile modular operating theatre",
-      "Post-op care & physiotherapy",
-    ],
-    process: [
-      { step: "Pre-op", text: "Detailed assessment, fitness tests and consent." },
-      { step: "Surgery", text: "Performed in a sterile modular OT by senior surgeons." },
-      { step: "Recovery", text: "ICU/ward monitoring with pain management." },
-      { step: "Follow-up", text: "Wound review, suture removal and rehab guidance." },
-    ],
+    features: ["Laparoscopic and open surgery", "Hernia, appendix and gallbladder surgery", "Abdominal and gastrointestinal procedures", "Trauma and emergency surgery", "Minor surgical procedures", "Post-operative monitoring and wound care"],
+    process: [{ step: "Consultation", text: "Clinical assessment and review of reports." }, { step: "Planning", text: "Investigations, fitness and treatment discussion." }, { step: "Procedure", text: "Surgery with modern anaesthesia and monitoring." }, { step: "Recovery", text: "Post-operative care, discharge advice and follow-up." }],
   },
   {
-    slug: "general-medicine",
-    title: "General Medicine & OPD",
-    icon: Stethoscope,
-    short: "Expert care for fever, diabetes, BP, and all general health issues.",
-    body: "Diagnosis and management of acute and chronic illnesses including diabetes, hypertension, thyroid, respiratory and gastrointestinal conditions.",
+    slug: "general-medicine", title: "General Medicine", icon: Stethoscope,
+    short: "Diagnosis and ongoing care for acute illnesses, diabetes, blood pressure and chronic conditions.",
+    body: "The Department of General Medicine offers OPD, inpatient and critical care for adult medical conditions, with coordinated diagnostics, medication management and preventive guidance.",
     image: careImg,
-    features: [
-      "Fever, flu and infections",
-      "Diabetes & hypertension management",
-      "Thyroid & hormonal disorders",
-      "Respiratory & GI care",
-      "Preventive health check-ups",
-      "Lifestyle & diet counselling",
-    ],
-    process: [
-      { step: "Consultation", text: "Detailed history and clinical examination." },
-      { step: "Diagnostics", text: "Targeted tests via in-house pathology lab." },
-      { step: "Treatment plan", text: "Personalised medication and lifestyle plan." },
-      { step: "Follow-up", text: "Regular reviews to track progress and adjust care." },
-    ],
+    features: ["Fever and infectious illnesses", "Diabetes and hypertension care", "Respiratory and gastrointestinal conditions", "Thyroid and lifestyle disorders", "Preventive health evaluation", "Medicine ICU support"],
+    process: [{ step: "Assessment", text: "Detailed history and physical examination." }, { step: "Diagnostics", text: "Relevant laboratory and imaging tests." }, { step: "Treatment", text: "Personalised medicines and care plan." }, { step: "Review", text: "Follow-up to monitor recovery and long-term health." }],
   },
   {
-    slug: "maternity",
-    title: "Maternity & Childcare",
-    icon: Baby,
-    short: "Safe deliveries and caring doctors for your baby's health.",
-    body: "Antenatal care, normal and caesarean deliveries, newborn care, immunisation and pediatric consultations under one roof.",
+    slug: "orthopaedics-joint-replacement", title: "Orthopaedics & Joint Replacement", icon: Bone,
+    short: "Specialist care for fractures, joint pain, mobility problems and joint replacement.",
+    body: "The Department of Orthopaedics and Joint Replacement provides evaluation, surgery and rehabilitation for bone, joint and musculoskeletal conditions across all age groups.",
     image: receptionImg,
-    features: [
-      "Antenatal & postnatal care",
-      "Normal & caesarean deliveries",
-      "Newborn / neonatal care",
-      "Immunisation as per IAP schedule",
-      "Pediatric OPD consultations",
-      "Lactation & nutrition counselling",
-    ],
-    process: [
-      { step: "Antenatal", text: "Regular check-ups, scans and nutrition guidance." },
-      { step: "Delivery", text: "Safe delivery in a clean, monitored labour room." },
-      { step: "Newborn care", text: "Immediate neonatal assessment and care." },
-      { step: "Follow-up", text: "Postnatal visits, vaccination and pediatric care." },
-    ],
+    features: ["Fracture and trauma management", "Knee and hip joint replacement", "Arthritis and joint pain care", "Sports and ligament injuries", "Spine and musculoskeletal evaluation", "Post-surgical rehabilitation guidance"],
+    process: [{ step: "Evaluation", text: "Examination with imaging review." }, { step: "Care plan", text: "Conservative or surgical options explained." }, { step: "Treatment", text: "Procedure or structured medical management." }, { step: "Rehabilitation", text: "Mobility, exercise and follow-up support." }],
   },
   {
-    slug: "pathology",
-    title: "Pathology Lab",
-    icon: Microscope,
-    short: "Quick and accurate blood tests done right inside the hospital.",
-    body: "Hematology, biochemistry, serology, microbiology and special tests with same-day reporting for most investigations.",
-    image: pathologyImg,
-    features: [
-      "Hematology (CBC, ESR, peripheral smear)",
-      "Biochemistry (LFT, KFT, lipid, sugar)",
-      "Serology & immunology",
-      "Microbiology & culture",
-      "Thyroid, hormone & vitamin profiles",
-      "Same-day report delivery",
-    ],
-    process: [
-      { step: "Sample collection", text: "Hygienic, painless collection by trained phlebotomist." },
-      { step: "Analysis", text: "Modern analysers under expert pathologist supervision." },
-      { step: "Quality check", text: "Internal QC for every batch of reports." },
-      { step: "Report", text: "Soft and printed reports — same day for most tests." },
-    ],
+    slug: "cardiology", title: "Cardiology", icon: HeartPulse,
+    short: "Heart evaluation, cardiac monitoring and dedicated critical care when every minute matters.",
+    body: "The Department of Cardiology supports assessment and management of heart-related conditions with dedicated consultation, monitoring and Cardiac ICU facilities.",
+    image: icuImg,
+    features: ["Cardiology consultation", "ECG and cardiac assessment", "Chest pain and heart-risk evaluation", "Hypertension management", "Cardiac emergency support", "Dedicated Cardiac ICU"],
+    process: [{ step: "Triage", text: "Prompt assessment of symptoms and vital signs." }, { step: "Testing", text: "Cardiac investigations as advised." }, { step: "Management", text: "Medication, monitoring or admission." }, { step: "Follow-up", text: "Risk-factor and long-term cardiac care." }],
   },
   {
-    slug: "ambulance",
-    title: "Ambulance Service",
-    icon: Ambulance,
-    short: "Fast emergency pickup from anywhere in Sangamner taluka.",
-    body: "Oxygen-equipped ambulance with trained paramedic available 24×7 for emergency pickup and inter-hospital transfers.",
+    slug: "nephrology", title: "Nephrology", icon: Droplets,
+    short: "Specialist kidney care for renal disease, electrolyte disorders and related complications.",
+    body: "The Department of Nephrology provides consultation and coordinated care for kidney disease, renal complications and conditions affecting fluid and electrolyte balance.",
+    image: careImg,
+    features: ["Kidney function evaluation", "Acute and chronic kidney disease care", "Electrolyte disorder management", "Hypertension related to kidney disease", "Diabetic kidney disease guidance", "Coordinated inpatient care"],
+    process: [{ step: "Consult", text: "Symptoms, history and medicines reviewed." }, { step: "Investigate", text: "Renal tests and imaging as required." }, { step: "Treat", text: "Individual care plan and monitoring." }, { step: "Continue", text: "Diet, medicine and follow-up guidance." }],
+  },
+  {
+    slug: "urology", title: "Urology", icon: Hospital,
+    short: "Medical and surgical care for urinary tract, prostate and stone-related conditions.",
+    body: "The Department of Urology evaluates and treats urinary system conditions in men and women, with coordinated diagnostic, surgical and follow-up care.",
+    image: otImg,
+    features: ["Kidney and urinary stone care", "Prostate evaluation", "Urinary tract conditions", "Male urological health", "Urological procedures", "Post-procedure follow-up"],
+    process: [{ step: "Consult", text: "Clinical and symptom assessment." }, { step: "Diagnose", text: "Laboratory and imaging evaluation." }, { step: "Treat", text: "Medical or surgical management." }, { step: "Review", text: "Recovery monitoring and prevention advice." }],
+  },
+  {
+    slug: "radiology", title: "Radiology", icon: ScanLine,
+    short: "Imaging support for timely diagnosis and better clinical decision-making.",
+    body: "The Department of Radiology supports doctors and patients with diagnostic imaging services designed for accurate evaluation and coordinated reporting.",
     image: heroImg,
-    features: [
-      "24×7 availability",
-      "Oxygen, suction & basic life support",
-      "Trained paramedic on board",
-      "Fast response across Sangamner taluka",
-      "Inter-hospital transfer support",
-      "Direct emergency handover at arrival",
-    ],
-    process: [
-      { step: "Call", text: `Dial ${CONTACT.ambulance} — operator picks instantly.` },
-      { step: "Dispatch", text: "Nearest ambulance dispatched within minutes." },
-      { step: "On-route care", text: "Oxygen and basic life support during transit." },
-      { step: "Handover", text: "Direct handover to emergency team on arrival." },
-    ],
+    features: ["Diagnostic imaging support", "Emergency imaging coordination", "Pre-operative evaluation", "Inpatient and OPD imaging", "Specialist interpretation", "Coordinated clinical reporting"],
+    process: [{ step: "Referral", text: "Clinical requirement and preparation reviewed." }, { step: "Imaging", text: "Study performed with patient comfort in mind." }, { step: "Reporting", text: "Images assessed by a specialist." }, { step: "Next steps", text: "Findings shared with the treating team." }],
   },
+  {
+    slug: "pathology", title: "Pathology", icon: TestTubes,
+    short: "Convenient in-house testing that supports faster diagnosis and treatment decisions.",
+    body: "The Department of Pathology provides essential laboratory investigations for OPD, admitted and emergency patients, supporting timely and coordinated care.",
+    image: pathologyImg,
+    features: ["Haematology investigations", "Biochemistry testing", "Serology and immunology", "Routine urine and body-fluid tests", "Pre-operative profiles", "Inpatient and emergency laboratory support"],
+    process: [{ step: "Collection", text: "Safe sample collection by trained staff." }, { step: "Analysis", text: "Samples processed with quality checks." }, { step: "Report", text: "Results prepared for clinical review." }, { step: "Consult", text: "Treating doctor explains the next steps." }],
+  },
+];
+
+export const OTHER_SERVICES = [
+  { icon: HeartPulse, title: "Emergency & Casualty Ward", body: "Round-the-clock assessment and stabilisation for urgent medical and surgical needs." },
+  { icon: Stethoscope, title: "OPD Services", body: "Consultations across departments with coordinated investigation and follow-up." },
+  { icon: Pill, title: "24×7 Pharmacy", body: "Convenient access to prescribed medicines for patients and attendants at all hours." },
+  { icon: ShieldCheck, title: "Cashless & Mediclaim Desk", body: "Administrative guidance for approvals, documentation, billing and eligible claims." },
+  { icon: Hospital, title: "Front Desk", body: "Help with registration, appointments, admissions, directions and general enquiries." },
+  { icon: Ambulance, title: "Ambulance Services", body: "Emergency transport support coordinated through the hospital enquiry line." },
+];
+
+export const INFRASTRUCTURE = [
+  "Medicine ICU", "Surgical ICU", "Cardiac ICU", "General Ward", "Semi-special Room",
+  "Special Room", "Semi-deluxe A/C Room", "Deluxe A/C Room",
 ];
 
 export const DOCTORS = [
-  {
-    name: "Dr. Pradeep Kute",
-    role: "Founder · MBBS, MS (General Surgery)",
-    bio: "Senior consultant surgeon with two decades of experience in general and laparoscopic surgery. Founder of Kute Hospital, dedicated to bringing modern, compassionate healthcare to Sangamner.",
-    specialties: ["General Surgery", "Laparoscopy", "Trauma"],
-    image: "drKute" as const,
-    featured: true,
-  },
-  {
-    name: "Dr. S. Patil",
-    role: "Visiting Surgeon · MS Ortho",
-    bio: "Specialist in joint replacements, sports injuries and trauma fracture management.",
-    specialties: ["Joint Replacement", "Trauma", "Arthroscopy"],
-    icon: Bone,
-  },
-  {
-    name: "Dr. A. Deshmukh",
-    role: "Visiting Cardiologist · DM Cardiology",
-    bio: "Consultant cardiologist with expertise in non-invasive cardiology, echo, and managing complex heart conditions.",
-    specialties: ["Cardiology", "Echo", "ECG"],
-    icon: HeartPulse,
-  },
+  { name: "Dr. Pradeep Kute", role: "Founder · MBBS, MS (General Surgery)", bio: "Senior consultant surgeon with extensive experience in general and laparoscopic surgery. Founder of Kute Hospital, dedicated to bringing modern, compassionate healthcare to Sangamner.", specialties: ["General Surgery", "Laparoscopy", "Trauma"], image: "drKute" as const, featured: true },
+  { name: "Dr. S. Patil", role: "Visiting Surgeon · MS Ortho", bio: "Specialist in joint replacements, sports injuries and trauma fracture management.", specialties: ["Joint Replacement", "Trauma", "Orthopaedics"], icon: Bone },
+  { name: "Dr. A. Deshmukh", role: "Visiting Cardiologist · DM Cardiology", bio: "Consultant cardiologist with expertise in cardiac evaluation and management of complex heart conditions.", specialties: ["Cardiology", "Cardiac Care", "ECG"], icon: HeartPulse },
 ];
 
 export const VISITING_SPECIALISTS = [
-  {
-    specialty: "Brain & Spine Surgeon",
-    doctors: [
-      { name: "Dr. Uday Bade", schedule: "Every Tuesday, Friday & Sunday" },
-      { name: "Dr. Anil Jadhav", schedule: "1st & 3rd Friday" },
-      { name: "Dr. Samir Phutane", schedule: "2nd & 4th Tuesday" }
-    ]
-  },
-  {
-    specialty: "Surgical Gastroenterologist",
-    doctors: [
-      { name: "Dr. Prakash Valse", schedule: "On call" },
-      { name: "Dr. Prashant Patil", schedule: "3rd Monday" },
-      { name: "Dr. Manoj Bhambre", schedule: "On call" }
-    ]
-  },
-  {
-    specialty: "Neurosurgeon",
-    doctors: [
-      { name: "Dr. Vijay Ghuge", schedule: "Every Wednesday" },
-      { name: "Dr. Nahush Patil", schedule: "1st & 3rd Friday" },
-      { name: "Dr. Ninad Thorat", schedule: "1st & 3rd Saturday" },
-      { name: "Dr. Dhananjay Duberkar", schedule: "2nd Wednesday" },
-      { name: "Dr. Sumant Biyani", schedule: "2nd & 4th Friday" },
-      { name: "Dr. Amit Yewale", schedule: "2nd & 4th Saturday" }
-    ]
-  },
-  {
-    specialty: "Uro Surgeon",
-    doctors: [
-      { name: "Dr. Narsingh Mane", schedule: "Every Wed & Sat" }
-    ]
-  },
-  {
-    specialty: "Nephrologist",
-    doctors: [
-      { name: "Dr. Pratik Shete", schedule: "Every Saturday" },
-      { name: "Dr. Nagesh Aghor", schedule: "2nd Wednesday" },
-      { name: "Dr. Prakash Ugale", schedule: "3rd Wednesday" }
-    ]
-  },
-  {
-    specialty: "Thyroid (Physician)",
-    doctors: [
-      { name: "Dr. Ashutosh Sonwane", schedule: "1st Sunday" }
-    ]
-  },
-  {
-    specialty: "Vascular Surgeon",
-    doctors: [
-      { name: "Dr. Ashutosh Aher", schedule: "2nd Tuesday" },
-      { name: "Dr. Pravin Narkhede", schedule: "2nd Friday" }
-    ]
-  },
-  {
-    specialty: "Pediatric Surgeon",
-    doctors: [
-      { name: "Dr. Satish Kapadnis", schedule: "2nd & 4th Wednesday" }
-    ]
-  },
-  {
-    specialty: "Psychiatrist",
-    doctors: [
-      { name: "Dr. Jyoti Ugale", schedule: "4th Thursday" }
-    ]
-  },
-  {
-    specialty: "Cancer Surgeon",
-    doctors: [
-      { name: "Dr. Vinayak Shenge", schedule: "On call" },
-      { name: "Dr. Sulabh Bhambre", schedule: "On call" }
-    ]
-  },
-  {
-    specialty: "Orthopedic Surgeon",
-    doctors: [
-      { name: "Dr. Nikhil Rahangdale", schedule: "On call" },
-      { name: "Dr. Amol Dange", schedule: "On call" }
-    ]
-  },
-  {
-    specialty: "Plastic Surgeon",
-    doctors: [
-      { name: "Dr. Lalit Darle", schedule: "Every Saturday" },
-      { name: "Dr. Sachin Wagh", schedule: "4th Saturday" }
-    ]
-  }
+  { specialty: "Brain & Spine Surgeon", doctors: [{ name: "Dr. Uday Bade", schedule: "Every Tuesday, Friday & Sunday" }, { name: "Dr. Anil Jadhav", schedule: "1st & 3rd Friday" }, { name: "Dr. Samir Phutane", schedule: "2nd & 4th Tuesday" }] },
+  { specialty: "Surgical Gastroenterologist", doctors: [{ name: "Dr. Prakash Valse", schedule: "On call" }, { name: "Dr. Prashant Patil", schedule: "3rd Monday" }, { name: "Dr. Manoj Bhambre", schedule: "On call" }] },
+  { specialty: "Neurosurgeon", doctors: [{ name: "Dr. Vijay Ghuge", schedule: "Every Wednesday" }, { name: "Dr. Nahush Patil", schedule: "1st & 3rd Friday" }, { name: "Dr. Ninad Thorat", schedule: "1st & 3rd Saturday" }, { name: "Dr. Dhananjay Duberkar", schedule: "2nd Wednesday" }, { name: "Dr. Sumant Biyani", schedule: "2nd & 4th Friday" }, { name: "Dr. Amit Yewale", schedule: "2nd & 4th Saturday" }] },
+  { specialty: "Uro Surgeon", doctors: [{ name: "Dr. Narsingh Mane", schedule: "Every Wednesday & Saturday" }] },
+  { specialty: "Nephrologist", doctors: [{ name: "Dr. Pratik Shete", schedule: "Every Saturday" }, { name: "Dr. Nagesh Aghor", schedule: "2nd Wednesday" }, { name: "Dr. Prakash Ugale", schedule: "3rd Wednesday" }] },
+  { specialty: "Thyroid Physician", doctors: [{ name: "Dr. Ashutosh Sonwane", schedule: "1st Sunday" }] },
+  { specialty: "Vascular Surgeon", doctors: [{ name: "Dr. Ashutosh Aher", schedule: "2nd Tuesday" }, { name: "Dr. Pravin Narkhede", schedule: "2nd Friday" }] },
+  { specialty: "Pediatric Surgeon", doctors: [{ name: "Dr. Satish Kapadnis", schedule: "2nd & 4th Wednesday" }] },
+  { specialty: "Psychiatrist", doctors: [{ name: "Dr. Jyoti Ugale", schedule: "4th Thursday" }] },
+  { specialty: "Cancer Surgeon", doctors: [{ name: "Dr. Vinayak Shenge", schedule: "On call" }, { name: "Dr. Sulabh Bhambre", schedule: "On call" }] },
+  { specialty: "Orthopaedic Surgeon", doctors: [{ name: "Dr. Nikhil Rahangdale", schedule: "On call" }, { name: "Dr. Amol Dange", schedule: "On call" }] },
+  { specialty: "Plastic Surgeon", doctors: [{ name: "Dr. Lalit Darle", schedule: "Every Saturday" }, { name: "Dr. Sachin Wagh", schedule: "4th Saturday" }] },
 ];
 
 export const TESTIMONIALS = [
-  {
-    name: "Rakesh Shinde",
-    location: "Sangamner",
-    treatment: "General Care",
-    quote: "The cleanliness maintained by the hospital. Excellent service and ambiance, Doctors panel is very strong. The best hospital in sangamner city. well connected",
-  },
-  {
-    name: "Vaishanvi Mahesh Murtadak",
-    location: "Sangamner",
-    treatment: "Consultation",
-    quote: "Dr. Pradeep Kute was fantastic. Knowledgeable, caring, and informative. Felt at ease and confident in receiving expert medical care. Highly recommended.",
-  },
-  {
-    name: "Somnath",
-    location: "Sangamner",
-    treatment: "Diagnostics",
-    quote: "One of the standout features of Kute Hospital is its state-of-the-art equipment, ensuring accurate diagnostics and effective treatments for patients.",
-  },
-  {
-    name: "Sachin",
-    location: "Sangamner",
-    treatment: "Surgery",
-    quote: "Thanks to the nurses, pre-op staff, and theater staff for their kindness and proficiency during my surgery. Grateful for everyone's care.",
-  },
-  {
-    name: "Anuj Sharma",
-    location: "Sangamner",
-    treatment: "General Care",
-    quote: "Kute Hospital: Where compassionate care and skilled professionals come together to ensure your well-being every step of the way.",
-  },
+  { name: "Rakesh Shinde", location: "Sangamner", treatment: "General Care", quote: "The hospital is clean, the service is excellent, and the doctors' panel is very strong. A dependable hospital in Sangamner." },
+  { name: "Vaishanvi Mahesh Murtadak", location: "Sangamner", treatment: "Consultation", quote: "Dr. Pradeep Kute was knowledgeable, caring and informative. I felt at ease and confident in the care I received." },
+  { name: "Somnath", location: "Sangamner", treatment: "Diagnostics", quote: "The hospital's modern equipment supports accurate diagnostics and effective treatment for patients." },
 ];
 
 export const STATS = [
-  { value: "35", label: "Beds" },
-  { value: "14+", label: "Years (Est. 2010)" },
-  { value: "12", label: "Expert Staff" },
-  { value: "10-Min", label: "Admission Speed" },
+  { value: "50", label: "Hospital Beds" }, { value: "16", label: "Years of Care" },
+  { value: "8", label: "Core Departments" }, { value: "24×7", label: "Emergency Support" },
 ];
 
 export const VALUES = [
-  { icon: HeartPulse, title: "Compassion First", body: "Every patient is treated like family — with empathy, dignity and respect." },
-  { icon: ShieldCheck, title: "Clinical Excellence", body: "Evidence-based protocols, modern equipment, and continuous training." },
-  { icon: Hospital, title: "Accessible Care", body: "Affordable pricing, transparent billing, and multiple insurance partners." },
-  { icon: Pill, title: "End-to-End Service", body: "From OPD to surgery to pharmacy and pathology — under one roof." },
+  { icon: HeartPulse, title: "Compassion First", body: "Every patient is treated with empathy, dignity and respect." },
+  { icon: ShieldCheck, title: "Clinical Excellence", body: "Coordinated specialists, modern facilities and attentive monitoring." },
+  { icon: Hospital, title: "Accessible Care", body: "Government schemes, cashless support and transparent guidance." },
+  { icon: Pill, title: "Care Under One Roof", body: "From OPD and diagnostics to critical care, surgery and pharmacy." },
 ];
 
-export const INSURANCE = [
-  "Star Health", "HDFC ERGO", "ICICI Lombard", "New India Assurance",
-  "Bajaj Allianz", "Niva Bupa", "Tata AIG", "ManipalCigna", "MahaPreet Yojana", "PMJAY",
-];
+export const INSURANCE = ["MJPJAY", "PMJAY", "ECHS", "MPKAY", "MKSSKAY", "ESIC", "Cashless Facilities", "Mediclaim Facilities"];
 
 export const FAQ = [
-  { q: "What are the OPD timings?", a: "OPD runs from 9:00 AM to 8:00 PM, Monday to Saturday. Sunday OPD is by appointment." },
-  { q: "Do you accept cashless insurance?", a: "Yes — we are empanelled with most major TPAs and government schemes including PMJAY and MahaPreet Yojana." },
-  { q: "Is the ambulance available outside Sangamner?", a: "Yes, our ambulance covers the entire Sangamner taluka and nearby areas. Call +91 88883 72225." },
-  { q: "How do I book an appointment with Dr. Kute?", a: "You can call our enquiry line, fill the appointment form on this site, or walk in during OPD hours." },
-  { q: "Do you have ICU facility?", a: "Yes — a fully equipped ICU with ventilators, multi-para monitors and 24×7 trained staff." },
+  { q: "Which departments are available?", a: "General Surgery, General Medicine, Orthopaedics & Joint Replacement, Cardiology, Nephrology, Urology, Radiology and Pathology are available." },
+  { q: "Which government schemes are accepted?", a: "Available schemes include MJPJAY, PMJAY, ECHS, MPKAY, MKSSKAY and ESIC, subject to eligibility and approval." },
+  { q: "Do you provide cashless and mediclaim support?", a: "Yes. Our administration and cashless desk assists with documentation, approvals and eligible cashless or mediclaim facilities." },
+  { q: "Is emergency care available at all hours?", a: `Yes. Emergency and casualty support is available 24×7. Call ${CONTACT.emergency}.` },
+  { q: "What accommodation is available?", a: "The hospital has a general ward, semi-special and special rooms, plus semi-deluxe and deluxe air-conditioned rooms." },
 ];
 
 export const HOSPITAL_IMAGES: { src: string; alt: string }[] = [
-  { src: IMG.exterior,   alt: "Kute Hospital building" },
-  { src: IMG.hall1,      alt: "Hospital reception hall" },
-  { src: IMG.ward1,      alt: "Patient ward" },
-  { src: IMG.ward2,      alt: "Hospital ward" },
-  { src: IMG.staff1,     alt: "Medical staff" },
-  { src: IMG.staff2,     alt: "Nursing team" },
-  { src: IMG.facility1,  alt: "Hospital facility" },
-  { src: IMG.facility2,  alt: "Treatment room" },
-  { src: IMG.care1,      alt: "Patient care" },
-  { src: IMG.care2,      alt: "Doctor attending patient" },
-  { src: IMG.care3,      alt: "Clinical care" },
-  { src: IMG.drKuteTeam, alt: "Dr. Kute with team" },
+  { src: IMG.exterior, alt: "Kute Hospital building" }, { src: IMG.hall1, alt: "Hospital reception hall" },
+  { src: IMG.ward1, alt: "Patient ward" }, { src: IMG.ward2, alt: "Hospital ward" },
+  { src: IMG.staff1, alt: "Medical staff" }, { src: IMG.staff2, alt: "Nursing team" },
+  { src: IMG.facility1, alt: "Hospital facility" }, { src: IMG.facility2, alt: "Treatment room" },
+  { src: IMG.care1, alt: "Patient care" }, { src: IMG.care2, alt: "Doctor attending patient" },
+  { src: IMG.care3, alt: "Clinical care" }, { src: IMG.drKuteTeam, alt: "Dr. Kute with team" },
 ];
 
-// Convenient individual URLs for use anywhere in the site
 export const HOSPITAL_STOCK = IMG;

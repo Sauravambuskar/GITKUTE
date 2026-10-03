@@ -12,7 +12,7 @@ const Footer = () => {
             <img src={logo} alt="Kute Hospital" className="h-12 w-auto object-contain" />
           </div>
           <p className="mt-5 text-sm text-primary-foreground/70 leading-relaxed">
-            Compassionate, modern multi-specialty care for Sangamner and surrounding regions since 2003.
+            A 50-bed multi-specialty hospital delivering compassionate, coordinated care to Sangamner and surrounding regions for 16 years.
           </p>
         </div>
 
@@ -41,17 +41,18 @@ const Footer = () => {
             <li className="flex items-start gap-3">
               <Phone className="w-4 h-4 mt-1 text-primary-glow" />
               <div>
-                <div>Enquiry: <a href={`tel:${CONTACT.enquiry}`} className="hover:underline">{CONTACT.enquiry}</a></div>
+                <div>Emergency: <a href={`tel:${CONTACT.emergency}`} className="hover:underline">{CONTACT.emergency}</a></div>
                 <div>Helpline: <a href={`tel:${CONTACT.helpline}`} className="hover:underline">{CONTACT.helpline}</a></div>
+                <div>Cardiology: <a href={`tel:${CONTACT.cardiology}`} className="hover:underline">{CONTACT.cardiology}</a></div>
               </div>
             </li>
             <li className="flex items-start gap-3">
               <Ambulance className="w-4 h-4 mt-1 text-primary-glow" />
-              <a href={`tel:${CONTACT.ambulance}`} className="hover:underline">Ambulance: {CONTACT.ambulance}</a>
+              <a href={`tel:${CONTACT.ambulance}`} className="hover:underline">Ambulance & casualty: {CONTACT.ambulance}</a>
             </li>
             <li className="flex items-start gap-3">
               <Mail className="w-4 h-4 mt-1 text-primary-glow" />
-              <a href={`mailto:${CONTACT.email}`} className="hover:underline">{CONTACT.email}</a>
+              <div className="break-all">{CONTACT.emails.map((email) => <a key={email} href={`mailto:${email}`} className="hover:underline block">{email}</a>)}</div>
             </li>
             <li className="flex items-start gap-3">
               <MapPin className="w-4 h-4 mt-1 text-primary-glow" />

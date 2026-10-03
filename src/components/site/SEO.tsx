@@ -34,8 +34,8 @@ const SEO = ({
     logo: "https://backup.kutehospital.com/wp-content/uploads/2024/02/kutedr1-1024x384.png",
     image: OG_IMAGE,
     description,
-    telephone: ["+918888882225", "+918888732225"],
-    email: "info@kutehospital.com",
+    telephone: ["+918888882225", "+918888732225", "+918888372225", "02425226688", "02425226686"],
+    email: "kutehospiandlaproscopycenter@gmail.com",
     address: {
       "@type": "PostalAddress",
       streetAddress: "Sangamner City and Taluka",

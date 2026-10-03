@@ -21,7 +21,7 @@ const Patients = () => {
       <SEO
         canonical="/patients"
         title="Patient Information — OPD Timings, Insurance & What to Bring | Kute Hospital"
-        description="Everything you need before visiting Kute Hospital Sangamner — OPD timings, what to bring, billing, insurance partners (Star Health, PMJAY, HDFC ERGO), reports and FAQs."
+        description="Patient information for Kute Hospital Sangamner, including OPD guidance, MJPJAY, PMJAY, ECHS, MPKAY, MKSSKAY, ESIC, cashless and mediclaim support."
         image="https://backup.kutehospital.com/wp-content/uploads/2024/03/IMG_9726-768x512.jpg"
       />
       <PageHero

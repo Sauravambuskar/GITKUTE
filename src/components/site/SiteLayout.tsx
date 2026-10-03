@@ -2,6 +2,7 @@ import { ReactNode, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import Header from "./Header";
 import Footer from "./Footer";
+import { CONTACT } from "@/data/hospital";
 
 // Custom WhatsApp SVG Icon for exact brand match
 const WhatsAppIcon = ({ className }: { className?: string }) => (
@@ -25,7 +26,7 @@ const SiteLayout = ({ children }: { children: ReactNode }) => {
 
       {/* Floating WhatsApp Action Button */}
       <a
-        href="https://wa.me/919922140353"
+        href={`https://wa.me/${CONTACT.emergency.replace(/\D/g, "")}`}
         target="_blank"
         rel="noreferrer"
         className="fixed bottom-6 right-6 md:bottom-8 md:right-8 z-[100] flex items-center justify-center w-14 h-14 bg-[#25D366] text-white rounded-full shadow-[0_4px_14px_rgba(37,211,102,0.4)] hover:scale-110 hover:shadow-[0_6px_20px_rgba(37,211,102,0.5)] transition-all duration-300 group"

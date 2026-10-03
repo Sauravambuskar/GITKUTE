@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { z } from "zod";
-import { Phone, Mail, MapPin, Ambulance, Send, Clock } from "lucide-react";
+import { Phone, Mail, MapPin, Ambulance, Send, Clock, Globe2, Share2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -47,7 +47,7 @@ const Contact = () => {
       <SEO
         canonical="/contact"
         title="Contact Kute Hospital Sangamner — Appointments, Helpline & Ambulance"
-        description="Contact Kute Hospital Sangamner. Book an appointment, call our 24×7 helpline (+91 88888 82225) or ambulance (+91 88883 72225). OPD Mon–Sat 9 AM–8 PM. Emergency always open."
+        description="Contact Kute Hospital Sangamner for emergency support, appointments, cardiology enquiries, ambulance services and cashless guidance."
         image="https://backup.kutehospital.com/wp-content/uploads/2024/03/IMG_9643-1024x683.jpg"
       />
       <PageHero
@@ -93,9 +93,13 @@ const Contact = () => {
         {/* Info */}
         <div className="lg:col-span-5 space-y-5">
           {[
-            { icon: Phone, title: "Enquiry & Helpline", lines: [`Enquiry: ${CONTACT.enquiry}`, `Helpline: ${CONTACT.helpline}`], href: `tel:${CONTACT.enquiry}` },
-            { icon: Ambulance, title: "Ambulance · 24×7", lines: [CONTACT.ambulance], href: `tel:${CONTACT.ambulance}`, accent: true },
-            { icon: Mail, title: "Email", lines: [CONTACT.email], href: `mailto:${CONTACT.email}` },
+            { icon: Phone, title: "Emergency & Helpline", lines: [`Emergency: ${CONTACT.emergency}`, `Helpline: ${CONTACT.helpline}`], href: `tel:${CONTACT.emergency}`, accent: true },
+            { icon: Phone, title: "Cardiology", lines: [CONTACT.cardiology], href: `tel:${CONTACT.cardiology}` },
+            { icon: Phone, title: "Landline", lines: CONTACT.landlines, href: `tel:${CONTACT.landlines[0].replace(/\s/g, "")}` },
+            { icon: Ambulance, title: "Ambulance Services", lines: [CONTACT.ambulance], href: `tel:${CONTACT.ambulance}` },
+            { icon: Mail, title: "Email", lines: CONTACT.emails, href: `mailto:${CONTACT.email}` },
+            { icon: Globe2, title: "Website", lines: [CONTACT.website], href: "https://www.kutehospital.com" },
+            { icon: Share2, title: "Social Media", lines: ["Facebook & Instagram"] },
             { icon: MapPin, title: "Location", lines: [CONTACT.address] },
             { icon: Clock, title: "Hours", lines: ["OPD · Mon–Sat · 9 AM – 8 PM", "Emergency · 24×7"] },
           ].map(({ icon: Icon, title, lines, href, accent }) => {
