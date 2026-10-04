@@ -1,3 +1,3 @@
-# Welcome to your Lovable project
+# Kute Hospital
 
-TODO: Document your project here
+Official website for Kute Hospital, Sangamner — a 50-bed multi-specialty hospital.
