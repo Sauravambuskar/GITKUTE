@@ -1,5 +1,5 @@
 import { Link, NavLink, useLocation } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { Menu, X, Phone, ChevronDown, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { CONTACT, SERVICES } from "@/data/hospital";
@@ -16,13 +16,35 @@ const Header = () => {
   const [departmentsOpen, setDepartmentsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
+  const headerRef = useRef<HTMLElement>(null);
+
+  const closeDepartments = useCallback(() => setDepartmentsOpen(false), []);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
-    onScroll();
+    const onScroll = () => {
+      setScrolled(window.scrollY > 24);
+      if (departmentsOpen) closeDepartments();
+    };
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+  }, [departmentsOpen, closeDepartments]);
+
+  useEffect(() => {
+    if (!departmentsOpen) return;
+    const onClickOutside = (e: MouseEvent) => {
+      if (headerRef.current && !headerRef.current.contains(e.target as Node)) closeDepartments();
+    };
+    const onEscape = (e: KeyboardEvent) => {
+      if (e.key === "Escape") closeDepartments();
+    };
+    document.addEventListener("click", onClickOutside);
+    document.addEventListener("keydown", onEscape);
+    return () => {
+      document.removeEventListener("click", onClickOutside);
+      document.removeEventListener("keydown", onEscape);
+    };
+  }, [departmentsOpen, closeDepartments]);
+
   useEffect(() => { setMobileOpen(false); setDepartmentsOpen(false); }, [location.pathname]);
   useEffect(() => {
     document.body.style.overflow = mobileOpen ? "hidden" : "";
@@ -31,7 +53,7 @@ const Header = () => {
 
   return (
     <>
-      <header className={`fixed top-0 inset-x-0 z-50 border-b transition-all ${scrolled ? "bg-background/95 backdrop-blur-xl border-border/60 shadow-soft" : "bg-background/85 backdrop-blur-md border-transparent"}`}>
+      <header ref={headerRef} className={`fixed top-0 inset-x-0 z-50 border-b transition-all ${scrolled ? "bg-background/95 backdrop-blur-xl border-border/60 shadow-soft" : "bg-background/85 backdrop-blur-md border-transparent"}`}>
         <div className="container-wide h-16 md:h-20 flex items-center justify-between gap-5">
           <Link to="/" className="flex items-center gap-3 shrink-0">
             <img src={logo} alt="Kute Hospital" className="h-10 md:h-12 w-auto object-contain" />
