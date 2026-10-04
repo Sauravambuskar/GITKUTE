@@ -49,7 +49,7 @@ const Header = () => {
           <button onClick={() => setMobileOpen(!mobileOpen)} className="lg:hidden w-10 h-10 rounded-full border bg-card grid place-items-center" aria-label="Toggle menu">{mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}</button>
         </div>
 
-        <div className={`hidden lg:block absolute top-full inset-x-0 bg-background/98 backdrop-blur-xl border-b shadow-xl transition-all origin-top ${departmentsOpen ? "opacity-100 scale-y-100 pointer-events-auto" : "opacity-0 scale-y-95 pointer-events-none"}`}>
+        <div className={`hidden lg:block absolute top-full inset-x-0 bg-background backdrop-blur-xl border-b shadow-xl transition-all origin-top z-50 ${departmentsOpen ? "opacity-100 scale-y-100 pointer-events-auto" : "opacity-0 scale-y-95 pointer-events-none"}`}>
           <div className="container-wide py-7">
             <div className="flex justify-between items-end mb-5"><div><div className="eyebrow">Clinical departments</div><h2 className="text-2xl mt-1">Specialist care under one roof</h2></div><Link to="/services" className="text-sm text-primary flex items-center gap-1">All facilities <ArrowRight className="w-4 h-4" /></Link></div>
             <div className="grid grid-cols-4 gap-3">
