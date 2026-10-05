@@ -1,7 +1,7 @@
 // Shared content for Kute Hospital across the website.
 import {
   Stethoscope, HeartPulse, Activity, Microscope, Ambulance, Bone,
-  ScanLine, TestTubes, ShieldCheck, Hospital, Pill, Droplets,
+  ScanLine, TestTubes, ShieldCheck, Hospital, Pill, Droplets, Syringe,
 } from "lucide-react";
 
 import icuImg from "@/assets/hospital/icu.jpg";
@@ -95,6 +95,14 @@ export const SERVICES = [
     process: [{ step: "Evaluation", text: "Examination with imaging review." }, { step: "Care plan", text: "Conservative or surgical options explained." }, { step: "Treatment", text: "Procedure or structured medical management." }, { step: "Rehabilitation", text: "Mobility, exercise and follow-up support." }],
   },
   {
+    slug: "anaesthesia-critical-care", title: "Anaesthesia & Critical Care", icon: Syringe,
+    short: "Safe anaesthesia support, ICU monitoring and critical care for surgical and emergency patients.",
+    body: "The Department of Anaesthesia and Critical Care supports surgeries, emergency stabilisation and ICU care with trained monitoring, pain control and coordinated critical care support.",
+    image: icuImg,
+    features: ["Pre-anaesthesia assessment", "General and regional anaesthesia support", "Surgical and post-operative monitoring", "ICU and emergency airway support", "Pain management guidance", "Critical care coordination"],
+    process: [{ step: "Evaluate", text: "Fitness, history, medicines and reports reviewed before procedures." }, { step: "Plan", text: "Anaesthesia approach and monitoring needs are selected for the patient." }, { step: "Monitor", text: "Vitals, airway, pain and recovery are closely supervised." }, { step: "Stabilise", text: "Critical care support continues in ICU or recovery areas as needed." }],
+  },
+  {
     slug: "cardiology", title: "Cardiology", icon: HeartPulse,
     short: "Heart evaluation, cardiac monitoring and dedicated critical care when every minute matters.",
     body: "The Department of Cardiology supports assessment and management of heart-related conditions with dedicated consultation, monitoring and Cardiac ICU facilities.",
@@ -179,7 +187,7 @@ export const TESTIMONIALS = [
 
 export const STATS = [
   { value: "50", label: "Hospital Beds" }, { value: "16", label: "Years of Care" },
-  { value: "8", label: "Core Departments" }, { value: "24×7", label: "Emergency Support" },
+  { value: "9", label: "Core Departments" }, { value: "24×7", label: "Emergency Support" },
 ];
 
 export const VALUES = [
@@ -192,7 +200,7 @@ export const VALUES = [
 export const INSURANCE = ["MJPJAY", "PMJAY", "ECHS", "MPKAY", "MKSSKAY", "ESIC", "Cashless Facilities", "Mediclaim Facilities"];
 
 export const FAQ = [
-  { q: "Which departments are available?", a: "General Surgery, General Medicine, Orthopaedics & Joint Replacement, Cardiology, Nephrology, Urology, Radiology and Pathology are available." },
+  { q: "Which departments are available?", a: "General Surgery, General Medicine, Orthopaedics & Joint Replacement, Anaesthesia & Critical Care, Cardiology, Nephrology, Urology, Radiology and Pathology are available." },
   { q: "Which government schemes are accepted?", a: "Available schemes include MJPJAY, PMJAY, ECHS, MPKAY, MKSSKAY and ESIC, subject to eligibility and approval." },
   { q: "Do you provide cashless and mediclaim support?", a: "Yes. Our administration and cashless desk assists with documentation, approvals and eligible cashless or mediclaim facilities." },
   { q: "Is emergency care available at all hours?", a: `Yes. Emergency and casualty support is available 24×7. Call ${CONTACT.emergency}.` },

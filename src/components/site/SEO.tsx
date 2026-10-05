@@ -23,7 +23,7 @@ interface SEOProps {
 
 const SEO = ({
   title,
-  description = "Kute Hospital, Sangamner — a 50-bed multi-specialty hospital with eight departments, dedicated ICUs, 24×7 emergency, pharmacy and cashless support.",
+  description = "Kute Hospital, Sangamner — a 50-bed multi-specialty hospital with nine departments, dedicated ICUs, 24×7 emergency, pharmacy and cashless support.",
   canonical,
   image = OG_IMAGE,
   type = "website",

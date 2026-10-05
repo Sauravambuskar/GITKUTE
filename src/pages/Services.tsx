@@ -11,13 +11,13 @@ const Services = () => (
     <SEO
       canonical="/services"
       title="Departments & Facilities | Kute Hospital Sangamner"
-      description="Explore Kute Hospital's eight departments, 24×7 emergency and pharmacy, ICU facilities, patient rooms, cashless support and government health schemes."
+      description="Explore Kute Hospital's nine departments, 24×7 emergency and pharmacy, ICU facilities, patient rooms, cashless support and government health schemes."
       image={surgeryHero}
     />
     <PageHero
       eyebrow="Departments & facilities"
       title={<>Complete care, <em className="italic text-primary">close to home.</em></>}
-      subtitle="Eight specialist departments, three dedicated ICUs, 24×7 support services and comfortable inpatient facilities—all coordinated under one roof."
+      subtitle="Nine specialist departments, three dedicated ICUs, 24×7 support services and comfortable inpatient facilities—all coordinated under one roof."
       image={surgeryHero}
     />
 
@@ -27,7 +27,7 @@ const Services = () => (
           <div className="eyebrow">Clinical departments</div>
           <h2 className="mt-3 text-3xl md:text-5xl font-serif text-balance">Specialist care for every stage of treatment.</h2>
         </div>
-        <span className="text-sm text-muted-foreground">8 core departments</span>
+        <span className="text-sm text-muted-foreground">9 core departments</span>
       </div>
       <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
         {SERVICES.map((service, index) => {

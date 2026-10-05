@@ -14,7 +14,7 @@ const Index = () => {
       <SEO
         canonical="/"
         title="Kute Hospital — Expert Surgery & 24×7 Emergency Care in Sangamner"
-        description="Kute Hospital is a 50-bed multi-specialty hospital in Sangamner with eight departments, dedicated ICUs, 24×7 emergency, pharmacy and cashless support."
+        description="Kute Hospital is a 50-bed multi-specialty hospital in Sangamner with nine departments, dedicated ICUs, 24×7 emergency, pharmacy and cashless support."
         image={exteriorImg}
       />
       {/* HERO */}
