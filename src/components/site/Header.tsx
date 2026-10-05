@@ -17,22 +17,27 @@ const Header = () => {
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
   const headerRef = useRef<HTMLElement>(null);
+  const sidebarRef = useRef<HTMLElement>(null);
 
   const closeDepartments = useCallback(() => setDepartmentsOpen(false), []);
 
   useEffect(() => {
     const onScroll = () => {
       setScrolled(window.scrollY > 24);
-      if (departmentsOpen) closeDepartments();
+      if (departmentsOpen && !mobileOpen) closeDepartments();
     };
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
-  }, [departmentsOpen, closeDepartments]);
+  }, [departmentsOpen, mobileOpen, closeDepartments]);
 
   useEffect(() => {
-    if (!departmentsOpen) return;
+    if (!departmentsOpen || mobileOpen) return;
     const onClickOutside = (e: MouseEvent) => {
-      if (headerRef.current && !headerRef.current.contains(e.target as Node)) closeDepartments();
+      const target = e.target as Node;
+      if (
+        headerRef.current && !headerRef.current.contains(target) &&
+        sidebarRef.current && !sidebarRef.current.contains(target)
+      ) closeDepartments();
     };
     const onEscape = (e: KeyboardEvent) => {
       if (e.key === "Escape") closeDepartments();
@@ -43,7 +48,7 @@ const Header = () => {
       document.removeEventListener("click", onClickOutside);
       document.removeEventListener("keydown", onEscape);
     };
-  }, [departmentsOpen, closeDepartments]);
+  }, [departmentsOpen, mobileOpen, closeDepartments]);
 
   useEffect(() => { setMobileOpen(false); setDepartmentsOpen(false); }, [location.pathname]);
   useEffect(() => {
@@ -82,7 +87,7 @@ const Header = () => {
       </header>
 
       <div className={`fixed inset-0 z-40 bg-black/45 backdrop-blur-sm lg:hidden transition-opacity ${mobileOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}`} onClick={() => setMobileOpen(false)} />
-      <aside className={`fixed top-0 right-0 z-50 h-full w-[min(360px,92vw)] bg-background shadow-2xl lg:hidden transition-transform ${mobileOpen ? "translate-x-0" : "translate-x-full"}`}>
+      <aside ref={sidebarRef} className={`fixed top-0 right-0 z-50 h-full w-[min(360px,92vw)] bg-background shadow-2xl lg:hidden transition-transform ${mobileOpen ? "translate-x-0" : "translate-x-full"}`}>
         <div className="p-5 border-b flex items-center justify-between"><img src={logo} alt="Kute Hospital" className="h-10" /><button onClick={() => setMobileOpen(false)} className="w-9 h-9 rounded-full bg-muted grid place-items-center"><X className="w-4 h-4" /></button></div>
         <nav className="p-4 h-[calc(100%-160px)] overflow-y-auto">
           {nav.slice(0, 2).map((item) => <NavLink key={item.to} to={item.to} className="block p-3 rounded-xl hover:bg-muted font-medium">{item.label}</NavLink>)}
