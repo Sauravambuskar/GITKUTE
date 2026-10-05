@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import SEO from "@/components/site/SEO";
 import PageHero from "@/components/site/PageHero";
 import { SERVICES, INSURANCE, OTHER_SERVICES, INFRASTRUCTURE } from "@/data/hospital";
-import ot from "@/assets/hospital/ot.jpg";
+import surgeryHero from "@/assets/hospital/gallery/surgery-team-lights.jpg";
 
 const Services = () => (
   <>
@@ -12,13 +12,13 @@ const Services = () => (
       canonical="/services"
       title="Departments & Facilities | Kute Hospital Sangamner"
       description="Explore Kute Hospital's eight departments, 24×7 emergency and pharmacy, ICU facilities, patient rooms, cashless support and government health schemes."
-      image="https://backup.kutehospital.com/wp-content/uploads/2024/03/IMG_9858-768x512.jpg"
+      image={surgeryHero}
     />
     <PageHero
       eyebrow="Departments & facilities"
       title={<>Complete care, <em className="italic text-primary">close to home.</em></>}
       subtitle="Eight specialist departments, three dedicated ICUs, 24×7 support services and comfortable inpatient facilities—all coordinated under one roof."
-      image={ot}
+      image={surgeryHero}
     />
 
     <section className="container-wide py-16">

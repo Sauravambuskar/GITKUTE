@@ -5,8 +5,7 @@ import { Button } from "@/components/ui/button";
 import SEO from "@/components/site/SEO";
 import PageHero from "@/components/site/PageHero";
 import { FAQ, INSURANCE, TESTIMONIALS, HOSPITAL_IMAGES } from "@/data/hospital";
-
-const care = "https://backup.kutehospital.com/wp-content/uploads/2024/03/IMG_9726-768x512.jpg";
+import opdReception from "@/assets/hospital/gallery/opd-reception.jpg";
 
 const INFO = [
   { icon: ClipboardList, title: "What to bring", body: "Photo ID, prior medical reports, current medication list, and insurance/TPA card if applicable." },
@@ -22,13 +21,13 @@ const Patients = () => {
         canonical="/patients"
         title="Patient Information — OPD Timings, Insurance & What to Bring | Kute Hospital"
         description="Patient information for Kute Hospital Sangamner, including OPD guidance, MJPJAY, PMJAY, ECHS, MPKAY, MKSSKAY, ESIC, cashless and mediclaim support."
-        image="https://backup.kutehospital.com/wp-content/uploads/2024/03/IMG_9726-768x512.jpg"
+        image={opdReception}
       />
       <PageHero
         eyebrow="For patients"
         title={<>Everything you need, <em className="italic text-primary">in one place.</em></>}
         subtitle="Visiting Kute Hospital? Here's a quick guide to make your visit smooth and stress-free."
-        image={care}
+        image={opdReception}
       />
 
       {/* Info cards */}

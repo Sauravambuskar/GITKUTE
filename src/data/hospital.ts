@@ -5,26 +5,55 @@ import {
 } from "lucide-react";
 
 import icuImg from "@/assets/hospital/icu.jpg";
-import otImg from "@/assets/hospital/ot.jpg";
 import careImg from "@/assets/hospital/care.jpg";
 import pathologyImg from "@/assets/hospital/pathology.jpg";
 import receptionImg from "@/assets/hospital/reception.jpg";
 import heroImg from "@/assets/hospital/hero.jpg";
+import exteriorImg from "@/assets/hospital/exterior.jpg";
+import drKuteImg from "@/assets/hospital/dr-kute.jpg";
+import staff1Img from "@/assets/hospital/staff-1.jpg";
+import staff2Img from "@/assets/hospital/staff-2.jpg";
+import leadershipImg from "@/assets/hospital/gallery/leadership-dr-kute.jpg";
+import saiBabaImg from "@/assets/hospital/gallery/dr-kute-sai-baba.jpg";
+import womenMedicalTeamImg from "@/assets/hospital/gallery/women-medical-team.jpg";
+import lobbyOverviewImg from "@/assets/hospital/gallery/lobby-overview.jpg";
+import administratorImg from "@/assets/hospital/gallery/hospital-administrator.jpg";
+import hospitalEntranceImg from "@/assets/hospital/gallery/hospital-entrance.jpg";
+import receptionEnquiryImg from "@/assets/hospital/gallery/reception-enquiry.jpg";
+import clinicalTeamOfficeImg from "@/assets/hospital/gallery/clinical-team-office.jpg";
+import wardMedicalTeamImg from "@/assets/hospital/gallery/ward-medical-team.jpg";
+import opdReceptionImg from "@/assets/hospital/gallery/opd-reception.jpg";
+import operationTheatreDarkImg from "@/assets/hospital/gallery/operation-theatre-dark.jpg";
+import surgeryTeamLightsImg from "@/assets/hospital/gallery/surgery-team-lights.jpg";
+import hospitalExteriorWideImg from "@/assets/hospital/gallery/hospital-exterior-wide.jpg";
+import doctorConsultationStockImg from "@/assets/hospital/gallery/doctor-consultation-stock.png";
 
 const IMG = {
-  drKuteTeam: "https://backup.kutehospital.com/wp-content/uploads/2024/02/1708542342224.jpg",
-  exterior: "https://backup.kutehospital.com/wp-content/uploads/2024/02/im-1536x864.jpg",
-  drKute: "https://backup.kutehospital.com/wp-content/uploads/2024/02/kutedr1-1024x384.png",
-  hall1: "https://backup.kutehospital.com/wp-content/uploads/2024/03/IMG_9901-1024x683.jpg",
-  ward1: "https://backup.kutehospital.com/wp-content/uploads/2024/03/IMG_9643-1024x683.jpg",
-  ward2: "https://backup.kutehospital.com/wp-content/uploads/2024/03/IMG_9680-1024x683.jpg",
-  staff1: "https://backup.kutehospital.com/wp-content/uploads/2024/03/IMG_9858-768x512.jpg",
-  staff2: "https://backup.kutehospital.com/wp-content/uploads/2024/03/IMG_9877-768x512.jpg",
-  facility1: "https://backup.kutehospital.com/wp-content/uploads/2024/03/IMG_9865-768x512.jpg",
-  facility2: "https://backup.kutehospital.com/wp-content/uploads/2024/03/IMG_9927-768x512.jpg",
-  care1: "https://backup.kutehospital.com/wp-content/uploads/2024/03/IMG_9726-768x512.jpg",
-  care2: "https://backup.kutehospital.com/wp-content/uploads/2024/03/IMG_9870-768x512.jpg",
-  care3: "https://backup.kutehospital.com/wp-content/uploads/2024/03/IMG_9717-768x512.jpg",
+  drKuteTeam: clinicalTeamOfficeImg,
+  exterior: hospitalEntranceImg,
+  exteriorWide: hospitalExteriorWideImg,
+  drKute: drKuteImg,
+  leadership: leadershipImg,
+  saiBaba: saiBabaImg,
+  hall1: receptionEnquiryImg,
+  lobby: lobbyOverviewImg,
+  opd: opdReceptionImg,
+  ward1: wardMedicalTeamImg,
+  ward2: receptionImg,
+  staff1: womenMedicalTeamImg,
+  staff2: wardMedicalTeamImg,
+  administrator: administratorImg,
+  facility1: icuImg,
+  facility2: surgeryTeamLightsImg,
+  surgery2: operationTheatreDarkImg,
+  care1: doctorConsultationStockImg,
+  care2: leadershipImg,
+  care3: clinicalTeamOfficeImg,
+  fallbackCare: careImg,
+  fallbackExterior: exteriorImg,
+  fallbackStaff1: staff1Img,
+  fallbackStaff2: staff2Img,
+  fallbackHero: heroImg,
 };
 
 export const CONTACT = {
@@ -45,7 +74,7 @@ export const SERVICES = [
     slug: "general-surgery", title: "General Surgery", icon: Activity,
     short: "Comprehensive open and laparoscopic surgical care with dedicated post-operative support.",
     body: "The Department of General Surgery provides evaluation and treatment for common and complex surgical conditions, supported by a modern operation theatre, Surgical ICU and attentive post-operative care.",
-    image: otImg,
+    image: surgeryTeamLightsImg,
     features: ["Laparoscopic and open surgery", "Hernia, appendix and gallbladder surgery", "Abdominal and gastrointestinal procedures", "Trauma and emergency surgery", "Minor surgical procedures", "Post-operative monitoring and wound care"],
     process: [{ step: "Consultation", text: "Clinical assessment and review of reports." }, { step: "Planning", text: "Investigations, fitness and treatment discussion." }, { step: "Procedure", text: "Surgery with modern anaesthesia and monitoring." }, { step: "Recovery", text: "Post-operative care, discharge advice and follow-up." }],
   },
@@ -53,7 +82,7 @@ export const SERVICES = [
     slug: "general-medicine", title: "General Medicine", icon: Stethoscope,
     short: "Diagnosis and ongoing care for acute illnesses, diabetes, blood pressure and chronic conditions.",
     body: "The Department of General Medicine offers OPD, inpatient and critical care for adult medical conditions, with coordinated diagnostics, medication management and preventive guidance.",
-    image: careImg,
+    image: doctorConsultationStockImg,
     features: ["Fever and infectious illnesses", "Diabetes and hypertension care", "Respiratory and gastrointestinal conditions", "Thyroid and lifestyle disorders", "Preventive health evaluation", "Medicine ICU support"],
     process: [{ step: "Assessment", text: "Detailed history and physical examination." }, { step: "Diagnostics", text: "Relevant laboratory and imaging tests." }, { step: "Treatment", text: "Personalised medicines and care plan." }, { step: "Review", text: "Follow-up to monitor recovery and long-term health." }],
   },
@@ -61,7 +90,7 @@ export const SERVICES = [
     slug: "orthopaedics-joint-replacement", title: "Orthopaedics & Joint Replacement", icon: Bone,
     short: "Specialist care for fractures, joint pain, mobility problems and joint replacement.",
     body: "The Department of Orthopaedics and Joint Replacement provides evaluation, surgery and rehabilitation for bone, joint and musculoskeletal conditions across all age groups.",
-    image: receptionImg,
+    image: clinicalTeamOfficeImg,
     features: ["Fracture and trauma management", "Knee and hip joint replacement", "Arthritis and joint pain care", "Sports and ligament injuries", "Spine and musculoskeletal evaluation", "Post-surgical rehabilitation guidance"],
     process: [{ step: "Evaluation", text: "Examination with imaging review." }, { step: "Care plan", text: "Conservative or surgical options explained." }, { step: "Treatment", text: "Procedure or structured medical management." }, { step: "Rehabilitation", text: "Mobility, exercise and follow-up support." }],
   },
@@ -77,7 +106,7 @@ export const SERVICES = [
     slug: "nephrology", title: "Nephrology", icon: Droplets,
     short: "Specialist kidney care for renal disease, electrolyte disorders and related complications.",
     body: "The Department of Nephrology provides consultation and coordinated care for kidney disease, renal complications and conditions affecting fluid and electrolyte balance.",
-    image: careImg,
+    image: opdReceptionImg,
     features: ["Kidney function evaluation", "Acute and chronic kidney disease care", "Electrolyte disorder management", "Hypertension related to kidney disease", "Diabetic kidney disease guidance", "Coordinated inpatient care"],
     process: [{ step: "Consult", text: "Symptoms, history and medicines reviewed." }, { step: "Investigate", text: "Renal tests and imaging as required." }, { step: "Treat", text: "Individual care plan and monitoring." }, { step: "Continue", text: "Diet, medicine and follow-up guidance." }],
   },
@@ -85,7 +114,7 @@ export const SERVICES = [
     slug: "urology", title: "Urology", icon: Hospital,
     short: "Medical and surgical care for urinary tract, prostate and stone-related conditions.",
     body: "The Department of Urology evaluates and treats urinary system conditions in men and women, with coordinated diagnostic, surgical and follow-up care.",
-    image: otImg,
+    image: operationTheatreDarkImg,
     features: ["Kidney and urinary stone care", "Prostate evaluation", "Urinary tract conditions", "Male urological health", "Urological procedures", "Post-procedure follow-up"],
     process: [{ step: "Consult", text: "Clinical and symptom assessment." }, { step: "Diagnose", text: "Laboratory and imaging evaluation." }, { step: "Treat", text: "Medical or surgical management." }, { step: "Review", text: "Recovery monitoring and prevention advice." }],
   },
@@ -171,12 +200,12 @@ export const FAQ = [
 ];
 
 export const HOSPITAL_IMAGES: { src: string; alt: string }[] = [
-  { src: IMG.exterior, alt: "Kute Hospital building" }, { src: IMG.hall1, alt: "Hospital reception hall" },
-  { src: IMG.ward1, alt: "Patient ward" }, { src: IMG.ward2, alt: "Hospital ward" },
-  { src: IMG.staff1, alt: "Medical staff" }, { src: IMG.staff2, alt: "Nursing team" },
-  { src: IMG.facility1, alt: "Hospital facility" }, { src: IMG.facility2, alt: "Treatment room" },
-  { src: IMG.care1, alt: "Patient care" }, { src: IMG.care2, alt: "Doctor attending patient" },
-  { src: IMG.care3, alt: "Clinical care" }, { src: IMG.drKuteTeam, alt: "Dr. Kute with team" },
+  { src: IMG.exterior, alt: "Kute Hospital entrance" }, { src: IMG.exteriorWide, alt: "Kute Hospital building" },
+  { src: IMG.hall1, alt: "Hospital reception and enquiry desk" }, { src: IMG.opd, alt: "OPD reception and waiting area" },
+  { src: IMG.lobby, alt: "Hospital lobby and waiting area" }, { src: IMG.leadership, alt: "Dr. Pradeep Kute with a colleague" },
+  { src: IMG.saiBaba, alt: "Dr. Pradeep Kute at the hospital prayer area" }, { src: IMG.staff1, alt: "Women medical staff at Kute Hospital" },
+  { src: IMG.drKuteTeam, alt: "Dr. Pradeep Kute with the clinical team" }, { src: IMG.staff2, alt: "Ward medical team at Kute Hospital" },
+  { src: IMG.administrator, alt: "Hospital administration desk" },
 ];
 
 export const HOSPITAL_STOCK = IMG;

@@ -1,8 +1,15 @@
 import { Helmet } from "react-helmet-async";
+import ogImage from "@/assets/hospital/gallery/hospital-exterior-wide.jpg";
+import logoImage from "@/assets/hospital/logo.png";
 
 const SITE_NAME = "Kute Hospital";
 const SITE_URL  = "https://kutehospital.com";
-const OG_IMAGE  = "https://backup.kutehospital.com/wp-content/uploads/2024/02/im-1536x864.jpg";
+const OG_IMAGE  = ogImage;
+
+const toAbsoluteUrl = (url: string) => {
+  if (/^https?:\/\//.test(url)) return url;
+  return `${SITE_URL}${url.startsWith("/") ? "" : "/"}${url}`;
+};
 
 interface SEOProps {
   title?: string;
@@ -25,14 +32,17 @@ const SEO = ({
 }: SEOProps) => {
   const fullTitle = title ? `${title} | ${SITE_NAME}` : `${SITE_NAME} — Compassionate Multi-Specialty Care in Sangamner`;
   const canonicalUrl = canonical ? `${SITE_URL}${canonical}` : SITE_URL;
+  const metaImage = toAbsoluteUrl(image);
+  const schemaImage = toAbsoluteUrl(OG_IMAGE);
+  const schemaLogo = toAbsoluteUrl(logoImage);
 
   const defaultSchema = {
     "@context": "https://schema.org",
     "@type": "MedicalOrganization",
     name: "Kute Hospital",
     url: SITE_URL,
-    logo: "https://backup.kutehospital.com/wp-content/uploads/2024/02/kutedr1-1024x384.png",
-    image: OG_IMAGE,
+    logo: schemaLogo,
+    image: schemaImage,
     description,
     telephone: ["+918888882225", "+918888732225", "+918888372225", "02425226688", "02425226686"],
     email: "kutehospiandlaproscopycenter@gmail.com",
@@ -103,7 +113,7 @@ const SEO = ({
       <meta property="og:title" content={fullTitle} />
       <meta property="og:description" content={description} />
       <meta property="og:url" content={canonicalUrl} />
-      <meta property="og:image" content={image} />
+      <meta property="og:image" content={metaImage} />
       <meta property="og:image:width" content="1536" />
       <meta property="og:image:height" content="864" />
       <meta property="og:locale" content="en_IN" />
@@ -112,7 +122,7 @@ const SEO = ({
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={fullTitle} />
       <meta name="twitter:description" content={description} />
-      <meta name="twitter:image" content={image} />
+      <meta name="twitter:image" content={metaImage} />
 
       {/* Geo */}
       <meta name="geo.region" content="IN-MH" />

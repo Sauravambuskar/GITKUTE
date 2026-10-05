@@ -1,14 +1,12 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Phone, Calendar, Ambulance, Clock, ShieldCheck, Star, Quote, Camera, MapPin, User, ChevronRight } from "lucide-react";
+import { ArrowRight, Phone, Calendar, Ambulance, Clock, ShieldCheck, Star, Quote, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import SEO from "@/components/site/SEO";
 import { SERVICES, TESTIMONIALS, STATS, VALUES, CONTACT } from "@/data/hospital";
 
 import drKuteImg from "@/assets/hospital/dr-kute.jpg";
-const careImg = "https://backup.kutehospital.com/wp-content/uploads/2024/03/IMG_9726-768x512.jpg";
-const realExterior = "https://backup.kutehospital.com/wp-content/uploads/2024/02/im-1536x864.jpg";
-const realStaff1 = "https://backup.kutehospital.com/wp-content/uploads/2024/02/1708542342224.jpg"; // Dr Kute with patient
-const realStaff2 = "https://backup.kutehospital.com/wp-content/uploads/2024/03/IMG_9877-768x512.jpg";
+import exteriorImg from "@/assets/hospital/gallery/hospital-entrance.jpg";
+import founderOfficeImg from "@/assets/hospital/gallery/leadership-dr-kute.jpg";
 
 const Index = () => {
   return (
@@ -17,7 +15,7 @@ const Index = () => {
         canonical="/"
         title="Kute Hospital — Expert Surgery & 24×7 Emergency Care in Sangamner"
         description="Kute Hospital is a 50-bed multi-specialty hospital in Sangamner with eight departments, dedicated ICUs, 24×7 emergency, pharmacy and cashless support."
-        image="https://backup.kutehospital.com/wp-content/uploads/2024/02/im-1536x864.jpg"
+        image={exteriorImg}
       />
       {/* HERO */}
       <section className="relative overflow-hidden">
@@ -49,7 +47,7 @@ const Index = () => {
 
           <div className="lg:col-span-6 relative">
             <div className="relative h-[280px] sm:h-[380px] md:h-[460px] w-full rounded-[2rem] overflow-hidden shadow-elegant animate-scale-in">
-              <img src={realExterior} alt="Kute Hospital exterior" className="w-full h-full object-cover hover:scale-105 transition-transform duration-1000" width={1024} height={576} />
+              <img src={exteriorImg} alt="Kute Hospital exterior in Sangamner" className="w-full h-full object-cover hover:scale-105 transition-transform duration-1000" width={1920} height={1080} />
               <div className="absolute inset-0 bg-gradient-to-t from-primary/60 via-transparent to-transparent" />
               
               {/* Floating Reviews Card */}
@@ -181,9 +179,9 @@ const Index = () => {
       <section className="container-wide py-24">
         <div className="grid lg:grid-cols-12 gap-12 items-center">
           <div className="lg:col-span-6 grid grid-cols-2 gap-4">
-            <img src={realExterior} alt="Kute Hospital" className="rounded-3xl aspect-[4/5] object-cover shadow-soft" loading="lazy" />
+            <img src={exteriorImg} alt="Kute Hospital entrance" className="rounded-3xl aspect-[4/5] object-cover shadow-soft" loading="lazy" />
             <div className="rounded-3xl aspect-[4/5] bg-white shadow-soft mt-10 overflow-hidden relative border border-border/40">
-              <img src={drKuteImg} alt="Dr. Pradeep Kute" className="w-full h-full object-cover object-[center_20%]" loading="lazy" />
+              <img src={founderOfficeImg} alt="Dr. Pradeep Kute with a colleague at Kute Hospital" className="w-full h-full object-cover object-center" loading="lazy" />
             </div>
           </div>
           <div className="lg:col-span-6">

@@ -6,8 +6,8 @@ import PageHero from "@/components/site/PageHero";
 import { DOCTORS, VISITING_SPECIALISTS } from "@/data/hospital";
 import { Clock } from "lucide-react";
 import drKute from "@/assets/hospital/dr-kute.jpg";
-const staff1 = "https://backup.kutehospital.com/wp-content/uploads/2024/03/IMG_9858-768x512.jpg";
-const staff2 = "https://backup.kutehospital.com/wp-content/uploads/2024/03/IMG_9877-768x512.jpg";
+import staff1 from "@/assets/hospital/gallery/women-medical-team.jpg";
+import staff2 from "@/assets/hospital/gallery/ward-medical-team.jpg";
 
 const Doctors = () => {
   const featured = DOCTORS.find((d) => d.featured)!;
@@ -17,7 +17,7 @@ const Doctors = () => {
         canonical="/doctors"
         title="Our Doctors — Dr. Pradeep Kute & Specialists at Kute Hospital Sangamner"
         description="Meet Dr. Pradeep Kute (MBBS, MS General Surgery) and visiting consultants at Kute Hospital Sangamner — orthopaedics, cardiology, gynaecology, neurology and more."
-        image="https://backup.kutehospital.com/wp-content/uploads/2024/02/1708542342224.jpg"
+        image={staff1}
         schema={{
           "@context": "https://schema.org",
           "@type": "Physician",
@@ -102,7 +102,7 @@ const Doctors = () => {
         <div className="grid md:grid-cols-2 gap-5">
           {[staff1, staff2].map((s, i) => (
             <div key={i} className="rounded-3xl overflow-hidden shadow-card">
-              <img src={s} alt="Hospital staff" className="w-full aspect-[16/10] object-cover hover:scale-105 transition-transform duration-700" loading="lazy" />
+              <img src={s} alt={i === 0 ? "Women medical staff at Kute Hospital" : "Ward medical team at Kute Hospital"} className="w-full aspect-[16/10] object-cover hover:scale-105 transition-transform duration-700" loading="lazy" />
             </div>
           ))}
         </div>

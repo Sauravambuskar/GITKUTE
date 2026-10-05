@@ -9,7 +9,7 @@ import { toast } from "@/hooks/use-toast";
 import SEO from "@/components/site/SEO";
 import PageHero from "@/components/site/PageHero";
 import { CONTACT } from "@/data/hospital";
-const reception = "https://backup.kutehospital.com/wp-content/uploads/2024/02/im-1536x864.jpg"; // Hospital exterior for contact page
+import hospitalEntrance from "@/assets/hospital/gallery/hospital-entrance.jpg";
 
 const schema = z.object({
   name: z.string().trim().min(2, "Please enter your name").max(100),
@@ -48,13 +48,13 @@ const Contact = () => {
         canonical="/contact"
         title="Contact Kute Hospital Sangamner — Appointments, Helpline & Ambulance"
         description="Contact Kute Hospital Sangamner for emergency support, appointments, cardiology enquiries, ambulance services and cashless guidance."
-        image="https://backup.kutehospital.com/wp-content/uploads/2024/03/IMG_9643-1024x683.jpg"
+        image={hospitalEntrance}
       />
       <PageHero
         eyebrow="Contact"
         title={<>Reach out — we're <em className="italic text-primary">here for you.</em></>}
         subtitle="Book an appointment, ask a question, or call our 24×7 helpline. We respond to every enquiry."
-        image={reception}
+        image={hospitalEntrance}
       />
 
       <section className="container-wide py-12 grid lg:grid-cols-12 gap-10">

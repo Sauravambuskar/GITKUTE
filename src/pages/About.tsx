@@ -4,9 +4,10 @@ import { Button } from "@/components/ui/button";
 import SEO from "@/components/site/SEO";
 import PageHero from "@/components/site/PageHero";
 import { STATS, VALUES } from "@/data/hospital";
-import drKute from "@/assets/hospital/dr-kute.jpg";
-const reception = "https://backup.kutehospital.com/wp-content/uploads/2024/03/IMG_9901-1024x683.jpg";
-const care = "https://backup.kutehospital.com/wp-content/uploads/2024/03/IMG_9726-768x512.jpg";
+import drKute from "@/assets/hospital/gallery/leadership-dr-kute.jpg";
+import reception from "@/assets/hospital/gallery/reception-enquiry.jpg";
+import care from "@/assets/hospital/gallery/ward-medical-team.jpg";
+import exterior from "@/assets/hospital/gallery/hospital-entrance.jpg";
 
 const About = () => {
   return (
@@ -15,7 +16,7 @@ const About = () => {
         canonical="/about"
         title="About Kute Hospital — Our Story, Values & Dr. Pradeep Kute"
         description="Founded by Dr. Pradeep Kute (MS General Surgery), Kute Hospital has served Sangamner since 2010 with compassionate, modern multi-specialty healthcare. Learn about our team and values."
-        image="https://backup.kutehospital.com/wp-content/uploads/2024/03/IMG_9901-1024x683.jpg"
+        image={exterior}
       />
       <PageHero
         eyebrow="Our story"
@@ -28,7 +29,7 @@ const About = () => {
       <section className="container-narrow py-12 md:py-20">
         <div className="grid md:grid-cols-12 gap-10 items-start">
           <div className="md:col-span-5">
-            <img src={drKute} alt="Dr. Pradeep Kute" className="rounded-3xl aspect-[4/5] object-cover object-right shadow-card" loading="lazy" />
+            <img src={drKute} alt="Dr. Pradeep Kute with a colleague at Kute Hospital" className="rounded-3xl aspect-[4/5] object-cover object-center shadow-card" loading="lazy" />
           </div>
           <div className="md:col-span-7 space-y-5 text-muted-foreground leading-relaxed">
             <div className="eyebrow text-primary">A founder's note</div>
@@ -81,9 +82,9 @@ const About = () => {
       {/* Image grid */}
       <section className="container-wide py-16">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          {[reception, care, drKute].map((src, i) => (
+          {[reception, care, exterior].map((src, i) => (
             <div key={i} className="rounded-3xl overflow-hidden shadow-soft">
-              <img src={src} alt="" className={`w-full aspect-[4/5] object-cover hover:scale-105 transition-transform duration-700 ${src === drKute ? 'object-right' : ''}`} loading="lazy" />
+              <img src={src} alt="" className="w-full aspect-[4/5] object-cover hover:scale-105 transition-transform duration-700" loading="lazy" />
             </div>
           ))}
         </div>
